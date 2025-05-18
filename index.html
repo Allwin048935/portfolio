@@ -101,11 +101,21 @@
         .portfolio-text h3 {
             margin-bottom: 0;
         }
+        .timeline-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .timeline-item.animated {
+            animation: none !important; /* Prevent re-animation after first view */
+        }
+        .timeline-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
     <!-- Nav Bar Start -->
-    <div class="navbar navbar-expand-lg bg-light navbar-light">
+    <div class="navbar navbar-expand-lg bg-light navbar-light sticky-top">
         <div class="container-fluid">
             <a href="index.html" class="navbar-brand">Kulandai Yesu L</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -115,9 +125,9 @@
                 <div class="navbar-nav ml-auto">
                     <a href="#home" class="nav-item nav-link active">Home</a>
                     <a href="#about" class="nav-item nav-link">About</a>
-                    <a href="#software" class="nav-item nav-link">Software Skills</a>
-                    <a href="#service" class="nav-item nav-link">Service</a>
                     <a href="#experience" class="nav-item nav-link">Experience</a>
+                    <a href="#service" class="nav-item nav-link">Service</a>
+                    <a href="#software" class="nav-item nav-link">Software Skills</a>
                     <a href="#education" class="nav-item nav-link">Education</a>
                     <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
                     <a href="#skills" class="nav-item nav-link">Skills</a>
@@ -159,7 +169,7 @@
     </div>
     <!-- Hero End -->
 
-    <!-- About Start -->
+    <!-- About Start (Learn About Me) -->
     <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
         <div class="container-fluid">
             <div class="row align-items-center">
@@ -185,6 +195,104 @@
         </div>
     </div>
     <!-- About End -->
+
+    <!-- Experience Start (Working Experience) -->
+    <div class="experience" id="experience">
+        <div class="container">
+            <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>My Resume</p>
+                <h2>Working Experience</h2>
+            </header>
+            <div class="timeline">
+                <div class="timeline-item left wow bounceIn" data-wow-delay="0.1s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">March 2023 - Present</div>
+                        <h2>Senior BIM Modeler</h2>
+                        <h4>HSS BIM Solutions PVT.LTD., India</h4>
+                        <p>
+                            Modeled complex utility networks (water supply, sewage, drainage, electrical, telecom, and bridges) for overseas projects using Civil 3D and Revit. Created detailed profiles, managed data shortcuts, and developed parametric Revit families for infrastructure components, adhering to BEP standards. Resolved clashes using Navisworks for seamless system integration.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item right wow bounceIn" data-wow-delay="0.2s">
+                    <div class="timeline-text">
+                        <div class="timeline-date">Aug 2022 - March 2023</div>
+                        <h2>Revit Architecture BIM Modeler</h2>
+                        <h4>HSS BIM Solutions PVT.LTD., India</h4>
+                        <p>
+                            Contributed to as-built modeling of residential and commercial buildings in France using Revit Architecture. Used Dynamo for basic automation of sheet creation, performed quantity takeoffs in Excel, and ensured IFC compliance for smooth data exchange.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Experience End -->
+
+    <!-- Service Start (BIM & Modeling Services) -->
+    <div class="service" id="service">
+        <div class="container">
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>What I Do</p>
+                <h2>BIM & Modeling Services</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 wow slideInLeft" data-wow-delay="0.0s">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-drafting-compass"></i>
+                        </div>
+                        <div class="service-text">
+                            <h3>Utility Network Modeling</h3>
+                            <p>
+                                Modeling complex water supply, sewage, drainage, electrical, and telecom networks using Civil 3D and Revit, with detailed profiles and data shortcuts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow slideInRight" data-wow-delay="0.2s">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-cogs"></i>
+                        </div>
+                        <div class="service-text">
+                            <h3>Parametric Family Creation</h3>
+                            <p>
+                                Developing parametric Revit families for bridges, drainage structures, and streetlights, adhering to BEP standards for infrastructure projects.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow slideInLeft" data-wow-delay="0.4s">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="service-text">
+                            <h3>Clash Detection & Resolution</h3>
+                            <p>
+                                Utilizing Navisworks to identify and resolve model clashes, ensuring seamless integration of utility and infrastructure systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow slideInRight" data-wow-delay="0.6s">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-code"></i>
+                        </div>
+                        <div class="service-text">
+                            <h3>Automation with Dynamo</h3>
+                            <p>
+                                Using Dynamo for basic automation tasks like sheet creation and quantity takeoffs in Revit, ensuring IFC compliance for efficient data exchange.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
 
     <!-- Proficiency Softwares Start -->
     <div class="software-section" id="software">
@@ -253,105 +361,7 @@
     </div>
     <!-- Proficiency Softwares End -->
 
-    <!-- Service Start -->
-    <div class="service" id="service">
-        <div class="container">
-            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>What I Do</p>
-                <h2>BIM & Modeling Services</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-drafting-compass"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Utility Network Modeling</h3>
-                            <p>
-                                Modeling complex water supply, sewage, drainage, electrical, and telecom networks using Civil 3D and Revit, with detailed profiles and data shortcuts.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-cogs"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Parametric Family Creation</h3>
-                            <p>
-                                Developing parametric Revit families for bridges, drainage structures, and streetlights, adhering to BEP standards for infrastructure projects.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-exclamation-triangle"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Clash Detection & Resolution</h3>
-                            <p>
-                                Utilizing Navisworks to identify and resolve model clashes, ensuring seamless integration of utility and infrastructure systems.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-code"></i>
-                        </div>
-                        <div class="service-text">
-                            <h3>Automation with Dynamo</h3>
-                            <p>
-                                Using Dynamo for basic automation tasks like sheet creation and quantity takeoffs in Revit, ensuring IFC compliance for efficient data exchange.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
-
-    <!-- Experience Start -->
-    <div class="experience" id="experience">
-        <div class="container">
-            <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>My Resume</p>
-                <h2>Working Experience</h2>
-            </header>
-            <div class="timeline">
-                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">March 2023 - Present</div>
-                        <h2>Senior BIM Modeler</h2>
-                        <h4>HSS BIM Solutions PVT.LTD., India</h4>
-                        <p>
-                            Modeled complex utility networks (water supply, sewage, drainage, electrical, telecom, and bridges) for overseas projects using Civil 3D and Revit. Created detailed profiles, managed data shortcuts, and developed parametric Revit families for infrastructure components, adhering to BEP standards. Resolved clashes using Navisworks for seamless system integration.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-item right wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="timeline-text">
-                        <div class="timeline-date">Aug 2022 - March 2023</div>
-                        <h2>Revit Architecture BIM Modeler</h2>
-                        <h4>HSS BIM Solutions PVT.LTD., India</h4>
-                        <p>
-                            Contributed to as-built modeling of residential and commercial buildings in France using Revit Architecture. Used Dynamo for basic automation of sheet creation, performed quantity takeoffs in Excel, and ensured IFC compliance for smooth data exchange.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Experience End -->
-
-    <!-- Education Start -->
+    <!-- Education Start (Academic Background) -->
     <div class="education" id="education">
         <div class="container">
             <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
@@ -359,7 +369,7 @@
                 <h2>Academic Background</h2>
             </header>
             <div class="timeline">
-                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item left wow bounceIn" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">2017 - 2021</div>
                         <h2>B.E. in Civil Engineering</h2>
@@ -367,7 +377,7 @@
                         <p>Graduated with a 7.3 CGPA, specializing in civil engineering principles and infrastructure design.</p>
                     </div>
                 </div>
-                <div class="timeline-item right wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item right wow bounceIn" data-wow-delay="0.2s">
                     <div class="timeline-text">
                         <div class="timeline-date">2015 - 2017</div>
                         <h2>Higher Secondary Education</h2>
@@ -375,7 +385,7 @@
                         <p>Achieved 84.6% in HSE, focusing on science and mathematics.</p>
                     </div>
                 </div>
-                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item left wow bounceIn" data-wow-delay="0.3s">
                     <div class="timeline-text">
                         <div class="timeline-date">2014 - 2015</div>
                         <h2>SSLC</h2>
@@ -435,7 +445,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="00.2s">
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="portfolio-wrap">
                         <div class="portfolio-img">
                             <a href="projects/project-lrt-pulau.html">
