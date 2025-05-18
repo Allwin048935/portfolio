@@ -2,7 +2,6 @@ $(function() {
     $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
-            // Handle validation errors
             $('#success').html("<div class='alert alert-danger'>");
             $('#success > .alert-danger').append("<strong>Please fix the form errors and try again.</strong>");
             $('#success > .alert-danger').append('</div>');
@@ -16,7 +15,7 @@ $(function() {
                 data: $(form).serialize(),
                 cache: false,
                 success: function(response) {
-                    // Check Formspree's response
+                    // Verify Formspree success
                     if (response && (response.ok || response.status === 200)) {
                         $('#success').html("<div class='alert alert-success'>");
                         $('#success > .alert-success').append("<strong>Thank you for your message.</strong>");
