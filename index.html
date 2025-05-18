@@ -26,6 +26,7 @@
             text-align: center;
             font-size: 18px;
             margin: 0 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -63,14 +64,14 @@
                     <div class="hero-content">
                         <div class="hero-text">
                             <p>I'm</p>
-                            <h1>KULANDAI YESU </h1>
+                            <h1>KULANDAI YESU L</h1>
                             <h2></h2>
                             <div class="typed-text">BIM Modeler (Civil 3D/Revit)</div>
                         </div>
                         <div class="hero-btn">
                             <a class="btn" href="mailto:lkulandaiyesu@gmail.com?subject=Hire%20Kulandai%20Yesu%20for%20BIM%20Modeling">Hire Me</a>
-                            <a class="btn" href="#contact">Contact Me</a>
-                            <a class="btn" href="files/resume.pdf" download>Download Resume</a>
+                            <a class="btn" href="tel:+919025014840">Contact Me</a>
+                            <a class="btn" href="resume.pdf" download>Download Resume</a>
                         </div>
                     </div>
                 </div>
@@ -112,7 +113,7 @@
     <!-- About End -->
 
     <!-- Proficiency Softwares Start -->
- Soo <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="software">
+    <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="software">
         <div class="container">
             <div class="section-header text-center">
                 <p>My Skills</p>
@@ -251,7 +252,9 @@
                 <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">2017 - 2021</div>
-                        <h2>B.E. in Civil Engineering</h2>
+                        <h2>B.E. in­
+
+ Civil Engineering</h2>
                         <h4>Thamirabharani Engineering College, Anna University</h4>
                         <p>Graduated with a 7.3 CGPA, specializing in civil engineering principles and infrastructure design.</p>
                     </div>
@@ -263,7 +266,6 @@
                         <h4>St John’s Higher Secondary School</h4>
                         <p>Achieved 84.6% in HSE, focusing on science and mathematics.</p>
                     </div>
->
                 </div>
                 <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                     <div class="timeline-text">
@@ -404,7 +406,6 @@
     <!-- Testimonial Start -->
     <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">
         <div class="container">
-copyleft
             <div class="testimonial-icon">
                 <i class="fa fa-quote-left"></i>
             </div>
@@ -643,7 +644,7 @@ copyleft
 
     <!-- Footer Start -->
     <div class="footer wow fadeIn" data-wow-delay="0.3s">
-        <div class="container-fluid>
+        <div class="container-fluid">
             <div class="container">
                 <div class="footer-info">
                     <h2>Kulandai Yesu L</h2>
@@ -689,5 +690,29 @@ copyleft
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        // Initialize Software Carousel
+        $(document).ready(function(){
+            $('.software-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
