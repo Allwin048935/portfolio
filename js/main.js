@@ -1,109 +1,65 @@
+// main.js
 (function ($) {
     "use strict";
-    
-    // loader
-    var loader = function () {
+
+    // Spinner
+    var spinner = function () {
         setTimeout(function () {
-            if ($('#loader').length > 0) {
-                $('#loader').removeClass('show');
+            if ($('#spinner').length > 0) {
+                $('#spinner').removeClass('show');
             }
         }, 1);
     };
-    loader();
-    
+    spinner();
     
     // Initiate the wowjs
     new WOW().init();
     
-    
-    // Back to top button
+    // Sticky Navbar
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
-            $('.back-to-top').fadeIn('slow');
+        if ($(this).scrollTop() > 300) {
+            $('.sticky-top').addClass('shadow-sm').css('top', '0px');
         } else {
-            $('.back-to-top').fadeOut('slow');
+            $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
         }
     });
+    
+    // Back to top button
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 300);
         return false;
     });
     
-    
-    // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 0) {
-            $('.navbar').addClass('nav-sticky');
-        } else {
-            $('.navbar').removeClass('nav-sticky');
-        }
+    // Facts counter
+    $('[data-toggle="counter-up"]').counterUp({
+        delay: 10,
+        time: 2000
     });
-    
-    
-    // Smooth scrolling on the navbar links
-    $(".navbar-nav a").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            
-            $('html, body').animate({
-                scrollTop: $(this.hash).offset().top - 45
-            }, 1500, 'easeInOutExpo');
-            
-            if ($(this).parents('.navbar-nav').length) {
-                $('.navbar-nav .active').removeClass('active');
-                $(this).closest('a').addClass('active');
-            }
-        }
-    });
-    
     
     // Typed Initiate
-    if ($('.hero .hero-text h2').length == 1) {
-        var typed_strings = $('.hero .hero-text .typed-text').text();
-        var typed = new Typed('.hero .hero-text h2', {
-            strings: typed_strings.split(', '),
+    if ($('.typed-text').length > 0) {
+        var typed = new Typed(".typed-text", {
+            strings: ["BIM Modeler (Civil 3D/Revit)"],
             typeSpeed: 100,
             backSpeed: 20,
-            smartBackspace: false,
             loop: true
         });
     }
     
-    
-    // Skills
-    $('.skills').waypoint(function () {
-        $('.progress .progress-bar').each(function () {
-            $(this).css("width", $(this).attr("aria-valuenow") + '%');
+    // Portfolio isotope and filter
+    $(window).on('load', function () {
+        console.log('Isotope initializing...'); // Debug log
+        var portfolioIsotope = $('.portfolio-container').isotope({
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
         });
-    }, {offset: '80%'});
-
-
-    // Testimonials carousel
-    $(".testimonials-carousel").owlCarousel({
-        center: true,
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: {
-            0:{
-                items:1
-            }
-        }
-    });
-    
-    
-    
-    // Portfolio filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
-
-    $('#portfolio-filter li').on('click', function () {
-        $("#portfolio-filter li").removeClass('filter-active');
-        $(this).addClass('filter-active');
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
+        
+        $('#portfolio-filter li').on('click', function () {
+            console.log('Filter clicked:', $(this).attr('data-filter')); // Debug log
+            $("#portfolio-filter li").removeClass('filter-active');
+            $(this).addClass('filter-active');
+            portfolioIsotope.isotope({ filter: $(this).attr('data-filter') });
+        });
     });
     
 })(jQuery);
-
