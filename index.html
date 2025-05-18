@@ -92,6 +92,8 @@
         }
         .portfolio-img img {
             transition: transform 0.3s ease;
+            width: 100%;
+            height: auto;
         }
         .portfolio-img:hover img {
             transform: scale(1.1);
@@ -433,7 +435,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="00.2s">
                     <div class="portfolio-wrap">
                         <div class="portfolio-img">
                             <a href="projects/project-lrt-pulau.html">
@@ -785,25 +787,5 @@
 
     <!-- Template Javascript -->
     <script defer src="js/main.js"></script>
-    <!-- Custom Portfolio Filter Script -->
-    <script defer>
-        $(document).ready(function(){
-            // Initialize Isotope
-            var $portfolio = $('.portfolio-container').isotope({
-                itemSelector: '.portfolio-item',
-                layoutMode: 'fitRows'
-            });
-
-            // Filter items on button click
-            $('#portfolio-filter li').on('click', function() {
-                var filterValue = $(this).attr('data-filter');
-                $portfolio.isotope({ filter: filterValue });
-
-                // Update active class
-                $('#portfolio-filter li').removeClass('filter-active');
-                $(this).addClass('filter-active');
-            });
-        });
-    </script>
 </body>
 </html>
