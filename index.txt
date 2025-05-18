@@ -14,6 +14,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
@@ -48,6 +49,25 @@
             font-size: 40px;
             color: #ff0000; /* Red icon color */
             margin-bottom: 15px;
+        }
+        /* Testimonials carousel styles */
+        .testimonials-carousel .testimonial-item {
+            text-align: center;
+            padding: 20px;
+        }
+        .testimonials-carousel .testimonial-img {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+        }
+        .testimonials-carousel .testimonial-text {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        /* Ensure Contact section has no image */
+        .contact-info, .contact-form {
+            background: none !important;
         }
     </style>
 </head>
@@ -274,7 +294,7 @@
                 <h2>Working Experience</h2>
             </header>
             <div class="timeline">
-                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">March 2023 - Present</div>
                         <h2>Senior BIM Modeler</h2>
@@ -284,7 +304,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                <div class="timeline-item right wow fadeInUp" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">Aug 2022 - March 2023</div>
                         <h2>Revit Architecture BIM Modeler</h2>
@@ -307,7 +327,7 @@
                 <h2>Academic Background</h2>
             </header>
             <div class="timeline">
-                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">2017 - 2021</div>
                         <h2>B.E. in Civil Engineering</h2>
@@ -315,7 +335,7 @@
                         <p>Graduated with a 7.3 CGPA, specializing in civil engineering principles and infrastructure design.</p>
                     </div>
                 </div>
-                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                <div class="timeline-item right wow fadeInUp" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">2015 - 2017</div>
                         <h2>Higher Secondary Education</h2>
@@ -323,7 +343,7 @@
                         <p>Achieved 84.6% in HSE, focusing on science and mathematics.</p>
                     </div>
                 </div>
-                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">2014 - 2015</div>
                         <h2>SSLC</h2>
@@ -462,8 +482,9 @@
     <!-- Testimonial Start -->
     <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">
         <div class="container">
-            <div class="testimonial-icon">
-                <i class="fa fa-quote-left"></i>
+            <div class="section-header text-center">
+                <p>Testimonials</p>
+                <h2>What Clients Say</h2>
             </div>
             <div class="owl-carousel testimonials-carousel">
                 <div class="testimonial-item">
@@ -518,14 +539,12 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="img/team-1.jpg" alt="Image">
+                            <img src="img/team-1.jpg" alt="Mollie Ross">
                         </div>
                         <div class="team-text">
                             <h2>Mollie Ross</h2>
                             <h4>Web Designer</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                            </p>
+                            <p>Skilled in creating user-friendly interfaces for project management tools.</p>
                             <div class="team-social">
                                 <a class="btn" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
@@ -538,14 +557,12 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="img/team-2.jpg" alt="Image">
+                            <img src="img/team-2.jpg" alt="Dylan Adams">
                         </div>
                         <div class="team-text">
                             <h2>Dylan Adams</h2>
                             <h4>Web Developer</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                            </p>
+                            <p>Experienced in developing robust web applications for BIM workflows.</p>
                             <div class="team-social">
                                 <a class="btn" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
@@ -558,14 +575,12 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="img/team-3.jpg" alt="Image">
+                            <img src="img/team-3.jpg" alt="Jennifer Page">
                         </div>
                         <div class="team-text">
                             <h2>Jennifer Page</h2>
                             <h4>Apps Designer</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                            </p>
+                            <p>Designs intuitive mobile apps for on-site project coordination.</p>
                             <div class="team-social">
                                 <a class="btn" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
@@ -578,16 +593,14 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="img/team-4.jpg" alt="Image">
+                            <img src="img/team-4.jpg" alt="Josh Dunn">
                         </div>
                         <div class="team-text">
                             <h2>Josh Dunn</h2>
                             <h4>Apps Developer</h4>
-                            <p>
-                                Lorem ipsum dolor sit amet consec adipis elit. Etiam accum lacus
-                            </p>
+                            <p>Builds scalable apps to enhance BIM project efficiency.</p>
                             <div class="team-social">
-                                <a class="btn" href=""><i class="btn" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
                                 <a class="btn" href=""><i class="fab fa-instagram"></i></a>
@@ -649,8 +662,8 @@
     <div class="blog" id="blog">
         <div class="container">
             <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p> Тим Блог</p>
-                <h2>Последние Статьи</h2>
+                <p>From Blog</p>
+                <h2>Latest Articles</h2>
             </div>
             <div class="row">
                 <div class="col-lg-6">
@@ -659,15 +672,15 @@
                             <img src="img/blog-1.jpg" alt="Blog">
                         </div>
                         <div class="blog-text">
-                            <h2>Lorem ipsum dolor sit amet</h2>
+                            <h2>Advancements in BIM for Infrastructure</h2>
                             <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Admin</p>
-                                <p><i class="far fa-list-alt"></i>Web Design</p>
-                                <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
+                                <p><i class="far fa-user"></i>Kulandai Yesu L</p>
+                                <p><i class="far fa-list-alt"></i>BIM Technology</p>
+                                <p><i class="far fa-calendar-alt"></i>15-May-2025</p>
                                 <p><i class="far fa-comments"></i>5</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Nullam commodo mattis mi. Nullam eu erat lectus. Proin viverra risus vitae luctus. Proin ut ante, vitae sapien. Fusce sem ac erat rhoncus, ornare mattis nisl massa et eros vitae pulvin
+                                Exploring the latest trends in BIM modeling for infrastructure projects, including automation and clash detection techniques.
                             </p>
                             <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
@@ -679,15 +692,15 @@
                             <img src="img/blog-2.jpg" alt="Blog">
                         </div>
                         <div class="blog-text">
-                            <h2>Lorem ipsum dolor sit amet</h2>
+                            <h2>Optimizing Revit Workflows with Dynamo</h2>
                             <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Admin</p>
-                                <p><i class="far fa-list-alt"></i>Apps Design</p>
-                                <p><i class="far fa-calendar-alt"></i>01-Jan-2045</p>
-                                <p><i class="far fa-comments"></i>10</p>
+                                <p><i class="far fa-user"></i>Kulandai Yesu L</p>
+                                <p><i class="far fa-list-alt"></i>Revit Automation</p>
+                                <p><i class="far fa-calendar-alt"></i>10-May-2025</p>
+                                <p><i class="far fa-comments"></i>8</p>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Nullam commodo mattis mi. Nullam eu erat lectus. Proin viverra risus vitae luctus. Proin ut ante, vitae sapien. Fusce sem ac erat rhoncus, ornare mattis nisl massa et eros vitae pulvin
+                                A guide to using Dynamo for automating repetitive tasks in Revit, enhancing project efficiency.
                             </p>
                             <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
@@ -736,9 +749,9 @@
     <script defer src="lib/wow/wow.min.js"></script>
     <script defer src="lib/waypoints/waypoints.min.js"></script>
     <script defer src="lib/typed/typed.min.js"></script>
+    <script defer src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script defer src="lib/isotope/isotope.pkgd.min.js"></script>
     <script defer src="lib/lightbox/js/lightbox.min.js"></script>
-    <script defer src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Contact Javascript File -->
     <script defer src="mail/jqBootstrapValidation.min.js"></script>
@@ -746,5 +759,23 @@
 
     <!-- Template Javascript -->
     <script defer src="js/main.js"></script>
+    <script>
+        // Initialize Testimonials Carousel
+        $(document).ready(function(){
+            $('.testimonials-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                responsive: {
+                    0: { items: 1 },
+                    600: { items: 1 },
+                    1000: { items: 1 }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
