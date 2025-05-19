@@ -112,6 +112,8 @@
             max-width: 80%;
             max-height: 80vh;
             border-radius: 10px;
+        }
+        .overlay-img.zoom-in {
             animation: zoomIn 0.5s ease;
         }
         @keyframes zoomIn {
@@ -137,7 +139,7 @@
             transition: background 0.2s ease;
         }
         .overlay-nav:hover {
-            background: rgba(0, 0,口气: background 0.2s ease;
+            background: rgba(0, 0, 0, 0.8);
         }
         .overlay-prev {
             left: 20px;
@@ -368,18 +370,29 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
             // Image click to open overlay
             $('.model-gallery img').on('click', function() {
                 currentIndex = parseInt($(this).data('index'));
-                updateOverlayImage();
+                updateOverlayImage(true); // True for initial click to trigger zoomIn
                 $('#imageOverlay').addClass('active');
                 startSlideshow();
             });
 
             // Update overlay image
-            function updateOverlayImage() {
+            function updateOverlayImage(isInitialClick = false) {
                 const imgSrc = $(`.model-gallery img[data-index="${currentIndex}"]`).attr('src');
                 const imgAlt = $(`.model-gallery img[data-index="${currentIndex}"]`).attr('alt');
-                $('#overlayImage').attr('src', imgSrc).attr('alt', imgAlt)
-                    .removeClass('slide-left slide-right')
-                    .addClass(direction === 'left' ? 'slide-left' : 'slide-right');
+                const $overlayImage = $('#overlayImage');
+                
+                // Remove all animations
+                $overlayImage.removeClass('zoom-in slide-left slide-right');
+                
+                // Update image source and alt
+                $overlayImage.attr('src', imgSrc).attr('alt', imgAlt);
+                
+                // Apply appropriate animation
+                if (isInitialClick) {
+                    $overlayImage.addClass('zoom-in');
+                } else {
+                    $overlayImage.addClass(direction === 'left' ? 'slide-left' : 'slide-right');
+                }
             }
 
             // Start slideshow
@@ -420,6 +433,7 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
                 if (e.target.id === 'imageOverlay' || e.target.id === 'overlayClose') {
                     clearInterval(slideshowInterval);
                     $('#imageOverlay').removeClass('active');
+                    $('#overlayImage').removeClass('zoom-in slide-left slide-right');
                 }
             });
         });
