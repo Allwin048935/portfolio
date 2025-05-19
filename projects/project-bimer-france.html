@@ -113,28 +113,28 @@
             object-fit: cover;
             border-radius: 8px;
             cursor: pointer;
-            animation: fadeInScale 1s ease-in-out forwards;
+            animation: flipIn 0.8s ease-out forwards;
             opacity: 0;
         }
         /* Sequential animation delay for each image */
-        .model-gallery img:nth-child(1) { animation-delay: 0.2s; }
-        .model-gallery img:nth-child(2) { animation-delay: 0.4s; }
-        .model-gallery img:nth-child(3) { animation-delay: 0.6s; }
-        .model-gallery img:nth-child(4) { animation-delay: 0.8s; }
-        .model-gallery img:nth-child(5) { animation-delay: 1.0s; }
-        .model-gallery img:nth-child(6) { animation-delay: 1.2s; }
-        .model-gallery img:nth-child(7) { animation-delay: 1.4s; }
-        .model-gallery img:nth-child(8) { animation-delay: 1.6s; }
-        .model-gallery img:nth-child(9) { animation-delay: 1.8s; }
-        .model-gallery img:nth-child(10) { animation-delay: 2.0s; }
-        @keyframes fadeInScale {
+        .model-gallery img:nth-child(1) { animation-delay: 0.15s; }
+        .model-gallery img:nth-child(2) { animation-delay: 0.3s; }
+        .model-gallery img:nth-child(3) { animation-delay: 0.45s; }
+        .model-gallery img:nth-child(4) { animation-delay: 0.6s; }
+        .model-gallery img:nth-child(5) { animation-delay: 0.75s; }
+        .model-gallery img:nth-child(6) { animation-delay: 0.9s; }
+        .model-gallery img:nth-child(7) { animation-delay: 1.05s; }
+        .model-gallery img:nth-child(8) { animation-delay: 1.2s; }
+        .model-gallery img:nth-child(9) { animation-delay: 1.35s; }
+        .model-gallery img:nth-child(10) { animation-delay: 1.5s; }
+        @keyframes flipIn {
             0% {
                 opacity: 0;
-                transform: scale(0.8);
+                transform: perspective(400px) rotateY(30deg) translateX(20px);
             }
             100% {
                 opacity: 1;
-                transform: scale(1);
+                transform: perspective(400px) rotateY(0deg) translateX(0);
             }
         }
         /* Responsive adjustments */
@@ -230,7 +230,7 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
                     <h3>Outcomes</h3>
                     <p>
                         The accurate as-built models supported facility management and renovation planning, delivering value to clients and meeting project deadlines.
-                    </p>
+                    </p–
 
                     <!-- Model Images Section -->
                     <h3>Model Images</h3>
