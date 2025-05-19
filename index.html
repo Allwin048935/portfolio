@@ -38,9 +38,7 @@
             font-size: 24px;
             margin-bottom: 10px;
         }
-        .
-
-software-item p {
+        .software-item p {
             color: #666;
             font-size: 16px;
             line-height: 1.6;
@@ -100,22 +98,38 @@ software-item p {
         .portfolio-img:hover img {
             transform: scale(1.1);
         }
-        .portfolio-wrap {
-            margin-bottom: 30px; /* Added to ensure spacing between portfolio items */
-        }
-        .portfolio-text {
-            padding: 15px; /* Added padding for better spacing */
-            text-align: center;
-            background: #fff; /* Ensure background doesn't overlap */
-        }
         .portfolio-text h3 {
-            margin-bottom: 10px; /* Space between heading and button */
-            font-size: 20px; /* Consistent font size */
-            color: #333;
+            margin-bottom: 0;
         }
-        .portfolio-text .btn {
-            margin-top: 10px; /* Space above button */
-            display: inline-block; /* Ensure button is centered */
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .portfolio-img:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .portfolio-overlay a {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .portfolio-overlay a:hover {
+            background: #007bff;
+            border-color: #007bff;
         }
     </style>
 </head>
@@ -236,6 +250,121 @@ software-item p {
                         <div class="software-icon">
                             <i class="fa fa-pencil-ruler"></i>
                         </div>
+                        <p>2D Drafting works.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-table"></i>
+                        </div>
+                        <h3>MS Excel</h3>
+                        <p>General proficiency for data management.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="1.0s">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-file-word"></i>
+                        </div>
+                        <h3>MS Word</h3>
+                        <p>General proficiency for documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Proficiency Softwares End -->
+
+    <!-- Service Start -->
+    <div class="service" id="service">
+        <div class="container">
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>What I Do</p>
+                <h2>BIM & Modeling Services</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-drafting-compass"></i>
+                        </div>
+                        <div RAI YESU - Resume.pdf" download>Download Resume</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 d-none d-md-block">
+                    <div class="hero-image">
+                        <img src="img/hero.png" alt="Kulandai Yesu L">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- About Start -->
+    <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="about-content">
+                        <div class="section-header text-left">
+                            <p>Learn About Me</p>
+                            <h2>3 Years Experience</h2>
+                        </div>
+                        <div class="about-text">
+                            <p>
+                                I am a Senior BIM Modeler with 3 years of experience at HSS BIM Solutions PVT.LTD., specializing in Civil 3D and Revit for overseas infrastructure projects. I have modeled complex utility networks (water supply, sewage, drainage, electrical, telecom, and bridges) and developed parametric Revit families for infrastructure components, adhering to BEP standards. Proficient in clash detection using Navisworks and familiar with using Dynamo for basic automation, I ensure seamless system integration and IFC compliance for projects in Malaysia, Saudi Arabia, and France. <a href="#portfolio" style="text-decoration: none; color: #007bff;">...</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Proficiency Softwares Start -->
+    <div class="software-section" id="software">
+        <div class="container">
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>My Skills</p>
+                <h2>Proficiency Softwares</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-cube"></i>
+                        </div>
+                        <h3>Revit</h3>
+                        <p>Architect modelling, sheet, schedule, family creation, and basic level MEP works.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-road"></i>
+                        </div>
+                        <h3>Civil 3D</h3>
+                        <p>Utilities modelling (wet and dry), creating pressure pipe catalog, profiles, and labels.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-exclamation-circle"></i>
+                        </div>
+                        <h3>Navisworks</h3>
+                        <p>Clash exporting and solving.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-pencil-ruler"></i>
+                        </div>
                         <h3>AutoCAD</h3>
                         <p>2D Drafting works.</p>
                     </div>
@@ -270,7 +399,7 @@ software-item p {
                 <p>What I Do</p>
                 <h2>BIM & Modeling Services</h2>
             </div>
- Wellbeing div class="row">
+            <div class="row">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
                     <div class="service-item">
                         <div class="service-icon">
@@ -346,7 +475,7 @@ software-item p {
                         </p>
                     </div>
                 </div>
-                bdiv class="timeline-item right wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item right wow fadeInUp" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">Aug 2022 - March 2023</div>
                         <h2>Junior BIM Modeler</h2>
@@ -436,78 +565,78 @@ software-item p {
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
                     <div class="portfolio-wrap">
                         <div class="portfolio-img">
-                            <a href="projects/project-sg-marang.html">
-                                <img src="img/portfolio-1.jpg" alt="Sg. Marang Bridge">
-                            </a>
+                            <img src="img/portfolio-1.jpg" alt="Sg. Marang Bridge">
+                            <div class="portfolio-overlay">
+                                <a class="btn" href="projects/project-sg-marang.html">View Details</a>
+                            </div>
                         </div>
                         <div class="portfolio-text">
                             <h3>Sg. Marang Bridge Upgrade</h3>
-                            <a class="btn" href="projects/project-sg-marang.html">View Details <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="portfolio-wrap">
                         <div class="portfolio-img">
-                            <a href="projects/project-lrt-pulau.html">
-                                <img src="img/portfolio-2.jpg" alt="LRT Pulau Pinang">
-                            </a>
+                            <img src="img/portfolio-2.jpg" alt="LRT Pulau Pinang">
+                            <div class="portfolio-overlay">
+                                <a class="btn" href="projects/project-lrt-pulau.html">View Details</a>
+                            </div>
                         </div>
                         <div class="portfolio-text">
                             <h3>LRT Pulau Pinang Utilities</h3>
-                            <a class="btn" href="projects/project-lrt-pulau.html">View Details <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="portfolio-wrap">
                         <div class="portfolio-img">
-                            <a href="projects/project-king-salman.html">
-                                <img src="img/portfolio-3.jpg" alt="King Salman Park">
-                            </a>
+                            <img src="img/portfolio-3.jpg" alt="King Salman Park">
+                            <div class="portfolio-overlay">
+                                <a class="btn" href="projects/project-king-salman.html">View Details</a>
+                            </div>
                         </div>
                         <div class="portfolio-text">
                             <h3>King Salman Park Utilities</h3>
-                            <a class="btn" href="projects/project-king-salman.html">View Details <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.6s">
                     <div class="portfolio-wrap">
                         <div class="portfolio-img">
-                            <a href="projects/project-infinaxis.html">
-                                <img src="img/portfolio-4.jpg" alt="Infinaxis Data Centre">
-                            </a>
+                            <img src="img/portfolio-4.jpg" alt="Infinaxis Data Centre">
+                            <div class="portfolio-overlay">
+                                <a class="btn" href="projects/project-infinaxis.html">View Details</a>
+                            </div>
                         </div>
                         <div class="portfolio-text">
                             <h3>Infinaxis Data Centre</h3>
-                            <a class="btn" href="projects/project-infinaxis.html">View Details <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.8s">
                     <div class="portfolio-wrap">
                         <div class="portfolio-img">
-                            <a href="projects/project-penang-south.html">
-                                <img src="img/portfolio-5.jpg" alt="Penang South Reclamation">
-                            </a>
+                            <img src="img/portfolio-5.jpg" alt="Penang South Reclamation">
+                            <div class="portfolio-overlay">
+                                <a class="btn" href="projects/project-penang-south.html">View Details</a>
+                            </div>
                         </div>
                         <div class="portfolio-text">
                             <h3>Penang South Reclamation</h3>
-                            <a class="btn" href="projects/project-penang-south.html">View Details <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="1.0s">
                     <div class="portfolio-wrap">
                         <div class="portfolio-img">
-                            <a href="projects/project-bimer-france.html">
-                                <img src="img/portfolio-6.jpg" alt="BIMer Services France">
-                            </a>
+                            <img src="img/portfolio-6.jpg" alt="BIMer Services France">
+                            <div class="portfolio-overlay">
+                                <a class="btn" href="projects/project-bimer-france.html">View Details</a>
+                            </div>
                         </div>
                         <div class="portfolio-text">
                             <h3>BIMer Services France</h3>
-                            <a class="btn" href="projects/project-bimer-france.html">View Details <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -673,7 +802,7 @@ software-item p {
     <!-- Blog End -->
 
     <!-- Footer Start -->
-    <div class="footer wow fadeIn" data-wow-delay="0.3s">
+    <div class="footer wow fadeIn" paesi data-wow-delay="0.3s">
         <div class="container-fluid">
             <div class="container">
                 <div class="footer-info">
@@ -718,5 +847,29 @@ software-item p {
 
     <!-- Template Javascript -->
     <script defer src="js/main.js"></script>
+
+    <!-- Touch Event Script for Portfolio Overlay -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const portfolioImages = document.querySelectorAll('.portfolio-img');
+
+            portfolioImages.forEach(img => {
+                img.addEventListener('touchstart', function() {
+                    const overlay = this.querySelector('.portfolio-overlay');
+                    if (overlay) {
+                        overlay.style.opacity = '1';
+                    }
+                });
+
+                img.addEventListener('touchend', function() {
+                    const overlay = this.querySelector('.portfolio-overlay');
+                    if (overlay) {
+                        overlay.style.opacity = '0';
+                    }
+                });
+            });
+ósito: true
+        });
+    </script>
 </body>
 </html>
