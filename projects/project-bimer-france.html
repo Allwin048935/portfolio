@@ -96,6 +96,54 @@
             max-width: 90%;
             margin: 1.75rem auto;
         }
+        /* Model Images Section */
+        .model-images {
+            margin-top: 40px;
+            overflow: hidden;
+        }
+        .model-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .model-gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            animation: slideRightToLeft 1s ease-in-out forwards;
+            opacity: 0;
+        }
+        /* Sequential animation delay for each image */
+        .model-gallery img:nth-child(1) { animation-delay: 0.2s; }
+        .model-gallery img:nth-child(2) { animation-delay: 0.4s; }
+        .model-gallery img:nth-child(3) { animation-delay: 0.6s; }
+        .model-gallery img:nth-child(4) { animation-delay: 0.8s; }
+        .model-gallery img:nth-child(5) { animation-delay: 1.0s; }
+        .model-gallery img:nth-child(6) { animation-delay: 1.2s; }
+        .model-gallery img:nth-child(7) { animation-delay: 1.4s; }
+        .model-gallery img:nth-child(8) { animation-delay: 1.6s; }
+        .model-gallery img:nth-child(9) { animation-delay: 1.8s; }
+        .model-gallery img:nth-child(10) { animation-delay: 2.0s; }
+        @keyframes slideRightToLeft {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .model-gallery img {
+                width: 150px;
+                height: 100px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -162,7 +210,7 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
                         <li><strong>LOD:</strong> 300</li>
                         <li><strong>Role:</strong> Revit Architecture BIM Modeler</li>
                         <li><strong>Worked Firm:</strong> HSS BIM Solutions Pvt. Ltd.</li>
-                        <li><strong>Tools Used:</strong> Revit, IFC Viewer, Dynamo (basic usage), AutoCAD,MS Excel, MS Word</li>
+                        <li><strong>Tools Used:</strong> Revit, IFC Viewer, Dynamo (basic usage), AutoCAD, MS Excel, MS Word</li>
                         <li><strong>Reference:</strong> <a href="https://bimer.fr/" target="_blank">Project Reference</a></li>
                     </ul>
 
@@ -184,6 +232,23 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
                         The accurate as-built models supported facility management and renovation planning, delivering value to clients and meeting project deadlines.
                     </p>
 
+                    <!-- Model Images Section -->
+                    <h3>Model Images</h3>
+                    <div class="model-images">
+                        <div class="model-gallery">
+                            <img src="../img/model-1.jpg" alt="Model Image 1" data-gallery="model" data-index="0">
+                            <img src="../img/model-2.jpg" alt="Model Image 2" data-gallery="model" data-index="1">
+                            <img src="../img/model-3.jpg" alt="Model Image 3" data-gallery="model" data-index="2">
+                            <img src="../img/model-4.jpg" alt="Model Image 4" data-gallery="model" data-index="3">
+                            <img src="../img/model-5.jpg" alt="Model Image 5" data-gallery="model" data-index="4">
+                            <img src="../img/model-6.jpg" alt="Model Image 6" data-gallery="model" data-index="5">
+                            <img src="../img/model-7.jpg" alt="Model Image 7" data-gallery="model" data-index="6">
+                            <img src="../img/model-8.jpg" alt="Model Image 8" data-gallery="model" data-index="7">
+                            <img src="../img/model-9.jpg" alt="Model Image 9" data-gallery="model" data-index="8">
+                            <img src="../img/model-10.jpg" alt="Model Image 10" data-gallery="model" data-index="9">
+                        </div>
+                    </div>
+
                     <a class="btn" href="../index.html#portfolio">Back to Portfolio</a>
                 </div>
             </div>
@@ -191,7 +256,7 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
     </div>
     <!-- Project Details End -->
 
-    <!-- Image Modal (Unused but Retained) -->
+    <!-- Image Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -246,14 +311,14 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
     <!-- Template Javascript -->
     <script defer src="../js/main.js"></script>
 
-    <!-- Modal Navigation Script (Unused but Retained) -->
+    <!-- Modal Navigation Script -->
     <script defer>
         $(document).ready(function() {
             let currentGallery, currentIndex;
 
             // Open modal and set initial image
-            $('.image-gallery img').on('click', function() {
-                currentGallery = $(this).data('gallery'); // 'inputs' or 'outputs'
+            $('.image-gallery img, .model-gallery img').on('click', function() {
+                currentGallery = $(this).data('gallery'); // 'inputs', 'outputs', or 'model'
                 currentIndex = parseInt($(this).data('index'));
                 updateModalImage();
                 $('#imageModal').modal('show');
@@ -273,7 +338,14 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
 
             // Update modal image based on current gallery and index
             function updateModalImage() {
-                const galleryClass = currentGallery === 'inputs' ? '.inputs-gallery' : '.outputs-gallery';
+                let galleryClass;
+                if (currentGallery === 'inputs') {
+                    galleryClass = '.inputs-gallery';
+                } else if (currentGallery === 'outputs') {
+                    galleryClass = '.outputs-gallery';
+                } else {
+                    galleryClass = '.model-gallery';
+                }
                 const imgSrc = $(`${galleryClass} img[data-index="${currentIndex}"]`).attr('src');
                 const imgAlt = $(`${galleryClass} img[data-index="${currentIndex}"]`).attr('alt');
                 $('#modalImage').attr('src', imgSrc).attr('alt', imgAlt);
