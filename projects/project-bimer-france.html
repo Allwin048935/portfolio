@@ -6,8 +6,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="BIMer Services France Project Details" name="keywords">
     <meta content="Details of the BIMer Services France project by Kulandai Yesu L, Senior BIM Modeler" name="description">
-    <!-- Favicon -->
-    <link href="../img/favicon.ico" rel="icon">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- CSS Libraries -->
@@ -372,7 +370,7 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
                 currentIndex = parseInt($(this).data('index'));
                 updateOverlayImage(true); // True for initial click to trigger zoomIn
                 $('#imageOverlay').addClass('active');
-                // Start slideshow after initial animation completes
+                // Start slideshow after zoomIn animation completes
                 setTimeout(startSlideshow, 500); // Matches zoomIn duration
             });
 
@@ -380,28 +378,27 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
             function updateOverlayImage(isInitialClick = false) {
                 const $image = $(`.model-gallery img[data-index="${currentIndex}"]`);
                 if (!$image.length) {
-                    // console.error('Image not found for index:', currentIndex);
+                    console.error('Image not found for index:', currentIndex); // Debug: Check for missing images
                     return;
                 }
                 const imgSrc = $image.attr('src');
                 const imgAlt = $image.attr('alt');
                 const $overlayImage = $('#overlayImage');
-                
+
                 // Remove all animations
                 $overlayImage.removeClass('zoom-in slide-left slide-right');
-                
+
                 // Update image source and alt
                 $overlayImage.attr('src', imgSrc).attr('alt', imgAlt);
-                
-                // Force reflow to restart animation
-                void $overlayImage[0].offsetHeight;
-                
-                // Apply appropriate animation
-                if (isInitialClick) {
-                    $overlayImage.addClass('zoom-in');
-                } else {
-                    $overlayImage.addClass(direction === 'left' ? 'slide-left' : 'slide-right');
-                }
+
+                // Force animation with requestAnimationFrame
+                requestAnimationFrame(() => {
+                    if (isInitialClick) {
+                        $overlayImage.addClass('zoom-in');
+                    } else {
+                        $overlayImage.addClass(direction === 'left' ? 'slide-left' : 'slide-right');
+                    }
+                });
             }
 
             // Start slideshow
