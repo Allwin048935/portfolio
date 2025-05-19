@@ -114,7 +114,7 @@
             border-radius: 10px;
         }
         .overlay-img.zoom-in {
-            animation: zoomIn 0.5s ease;
+            animation: zoomIn 0.5s ease forwards;
         }
         @keyframes zoomIn {
             0% {
@@ -163,10 +163,10 @@
         }
         /* Slideshow Animation */
         .overlay-img.slide-left {
-            animation: slideLeft 0.5s ease-in-out;
+            animation: slideLeft 0.5s ease-in-out forwards;
         }
         .overlay-img.slide-right {
-            animation: slideRight 0.5s ease-in-out;
+            animation: slideRight 0.5s ease-in-out forwards;
         }
         @keyframes slideLeft {
             0% {
@@ -372,13 +372,19 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
                 currentIndex = parseInt($(this).data('index'));
                 updateOverlayImage(true); // True for initial click to trigger zoomIn
                 $('#imageOverlay').addClass('active');
-                startSlideshow();
+                // Start slideshow after initial animation completes
+                setTimeout(startSlideshow, 500); // Matches zoomIn duration
             });
 
             // Update overlay image
             function updateOverlayImage(isInitialClick = false) {
-                const imgSrc = $(`.model-gallery img[data-index="${currentIndex}"]`).attr('src');
-                const imgAlt = $(`.model-gallery img[data-index="${currentIndex}"]`).attr('alt');
+                const $image = $(`.model-gallery img[data-index="${currentIndex}"]`);
+                if (!$image.length) {
+                    // console.error('Image not found for index:', currentIndex);
+                    return;
+                }
+                const imgSrc = $image.attr('src');
+                const imgAlt = $image.attr('alt');
                 const $overlayImage = $('#overlayImage');
                 
                 // Remove all animations
@@ -386,6 +392,9 @@ By integrating these disciplines, BIMer Services delivers a comprehensive and us
                 
                 // Update image source and alt
                 $overlayImage.attr('src', imgSrc).attr('alt', imgAlt);
+                
+                // Force reflow to restart animation
+                void $overlayImage[0].offsetHeight;
                 
                 // Apply appropriate animation
                 if (isInitialClick) {
