@@ -113,7 +113,7 @@
             object-fit: cover;
             border-radius: 8px;
             cursor: pointer;
-            animation: slideRightToLeft 1s ease-in-out forwards;
+            animation: fadeInScale 1s ease-in-out forwards;
             opacity: 0;
         }
         /* Sequential animation delay for each image */
@@ -127,14 +127,14 @@
         .model-gallery img:nth-child(8) { animation-delay: 1.6s; }
         .model-gallery img:nth-child(9) { animation-delay: 1.8s; }
         .model-gallery img:nth-child(10) { animation-delay: 2.0s; }
-        @keyframes slideRightToLeft {
+        @keyframes fadeInScale {
             0% {
-                transform: translateX(100%);
                 opacity: 0;
+                transform: scale(0.8);
             }
             100% {
-                transform: translateX(0);
                 opacity: 1;
+                transform: scale(1);
             }
         }
         /* Responsive adjustments */
