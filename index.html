@@ -29,18 +29,18 @@
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            opacity: 0; /* Start invisible for animation */
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+            opacity: 0; /* Start invisible */
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .software-item:nth-child(odd) {
-            transform: translateX(-100%); /* Slide in from left for odd items */
+            transform: translateX(-100%); /* Slide from left for odd items */
         }
         .software-item:nth-child(even) {
-            transform: translateX(100%); /* Slide in from right for even items */
+            transform: translateX(100%); /* Slide from right for even items */
         }
         .software-item.animate {
             opacity: 1;
-            transform: translateX(0); /* Move to final position */
+            transform: translateX(0); /* Final position */
         }
         .software-item:hover {
             transform: translateY(-5px) scale(1.02); /* Subtle hover effect */
@@ -74,18 +74,18 @@
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            opacity: 0; /* Start invisible for animation */
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+            opacity: 0; /* Start invisible */
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .skill-item:nth-child(odd) {
-            transform: translateX(-100%); /* Slide in from left for odd items */
+            transform: translateX(-100%); /* Slide from left for odd items */
         }
         .skill-item:nth-child(even) {
-            transform: translateX(100%); /* Slide in from right for even items */
+            transform: translateX(100%); /* Slide from right for even items */
         }
         .skill-item.animate {
             opacity: 1;
-            transform: translateX(0); /* Move to final position */
+            transform: translateX(0); /* Final position */
         }
         .skill-item:hover {
             transform: translateY(-5px) scale(1.02); /* Subtle hover effect */
@@ -102,6 +102,45 @@
             margin-bottom: 10px;
         }
         .skill-item p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Service Section Styles */
+        .service {
+            padding: 60px 0;
+            background: #ffffff;
+        }
+        .service-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            opacity: 0; /* Start invisible */
+            transform: translateY(100%); /* Start below */
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
+        }
+        .service-item.animate {
+            opacity: 1;
+            transform: translateY(0); /* Move to final position */
+        }
+        .service-item:hover {
+            transform: translateY(-5px) scale(1.02); /* Subtle hover effect */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .service-icon {
+            font-size: 40px;
+            color: #ff0000;
+            margin-bottom: 15px;
+        }
+        .service-text h3 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .service-text p {
             color: #666;
             font-size: 16px;
             line-height: 1.6;
@@ -128,21 +167,21 @@
             width: 50%;
             padding: 20px;
             box-sizing: border-box;
-            opacity: 0; /* Start invisible for animation */
-            transition: opacity 0.3s ease;
+            opacity: 0; /* Start invisible */
+            transition: opacity 1s ease;
         }
         .timeline-item.left {
             left: 0;
-            transform: translateX(-100%); /* Start off-screen to the left */
+            transform: translateX(-100%); /* Start off-screen left */
         }
         .timeline-item.right {
             left: 50%;
-            transform: translateX(100%); /* Start off-screen to the right */
+            transform: translateX(100%); /* Start off-screen right */
         }
         .timeline-item.animate {
             opacity: 1;
             transform: translateX(0); /* Move to center */
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .timeline-text {
             background: #ffffff;
@@ -153,7 +192,7 @@
             transition: all 0.3s ease;
         }
         .timeline-text:hover {
-            transform: scale(1.02); /* Subtle scale on hover */
+            transform: scale(1.02); /* Subtle hover effect */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
         .timeline-date {
@@ -262,7 +301,7 @@
             .timeline-item {
                 width: 100%;
                 left: 0 !important;
-                transform: translateX(-50%); /* Start slightly off-screen for mobile */
+                transform: translateX(-50%); /* Start slightly off-screen */
             }
             .timeline-item.right {
                 transform: translateX(-50%);
@@ -280,11 +319,11 @@
                 border-width: 10px 15px 10px 0;
                 border-color: transparent #ffffff transparent transparent;
             }
-            .software-item, .skill-item {
-                transform: translateX(-50%); /* Start slightly off-screen for mobile */
+            .software-item, .skill-item, .service-item {
+                transform: translateY(50%); /* Start below for mobile */
             }
-            .software-item.animate, .skill-item.animate {
-                transform: translateX(0);
+            .software-item.animate, .skill-item.animate, .service-item.animate {
+                transform: translateY(0);
             }
         }
     </style>
@@ -293,7 +332,7 @@
     <!-- Nav Bar Start -->
     <div class="navbar navbar-expand-lg bg-light navbar-light">
         <div class="container-fluid">
-            <a href="index.html" class="navbar-brand">Kulandai Yesu </a>
+            <a href="index.html" class="navbar-brand">Kulandai Yesu</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -301,13 +340,13 @@
                 <div class="navbar-nav ml-auto">
                     <a href="#home" class="nav-item nav-link active">Home</a>
                     <a href="#about" class="nav-item nav-link">About</a>
-                    <a href="#software" class="nav-item nav-link">Software Skills</a>
-                    <a href="#service" class="nav-item nav-link">Service</a>
+                    <a href="#service" class="nav-item nav-link">Services</a>
                     <a href="#experience" class="nav-item nav-link">Experience</a>
                     <a href="#education" class="nav-item nav-link">Education</a>
-                    <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+                    <a href="#software" class="nav-item nav-link">Software Skills</a>
                     <a href="#skills" class="nav-item nav-link">Skills</a>
-                    <a href="#blog" class="nav-item nav-link">Blog</a>
+                    <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+                    <a href="#collaborate" class="nav-item nav-link">Collaborate</a>
                     <a href="#contact" class="nav-item nav-link">Contact</a>
                 </div>
             </div>
@@ -366,72 +405,6 @@
     </div>
     <!-- About End -->
 
-    <!-- Proficiency Softwares Start -->
-    <div class="software-section" id="software">
-        <div class="container">
-            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>My Skills</p>
-                <h2>Proficiency Softwares</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="software-item">
-                        <div class="software-icon">
-                            <i class="fa fa-cube"></i>
-                        </div>
-                        <h3>Revit</h3>
-                        <p>Architect modelling, sheet, schedule, family creation, and basic level MEP works.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="software-item">
-                        <div class="software-icon">
-                            <i class="fa fa-road"></i>
-                        </div>
-                        <h3>Civil 3D</h3>
-                        <p>Utilities modelling (wet and dry), creating pressure pipe catalog, profiles, and labels.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="software-item">
-                        <div class="software-icon">
-                            <i class="fa fa-exclamation-circle"></i>
-                        </div>
-                        <h3>Navisworks</h3>
-                        <p>Clash exporting and solving.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="software-item">
-                        <div class="software-icon">
-                            <i class="fa fa-pencil-ruler"></i>
-                        </div>
-                        <p>2D Drafting works.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="software-item">
-                        <div class="software-icon">
-                            <i class="fa fa-table"></i>
-                        </div>
-                        <h3>MS Excel</h3>
-                        <p>General proficiency for data management.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="software-item">
-                        <div class="software-icon">
-                            <i class="fa fa-file-word"></i>
-                        </div>
-                        <h3>MS Word</h3>
-                        <p>General proficiency for documentation.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Proficiency Softwares End -->
-
     <!-- Service Start -->
     <div class="service" id="service">
         <div class="container">
@@ -440,7 +413,7 @@
                 <h2>BIM & Modeling Services</h2>
             </div>
             <div class="row">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+                <div class="col-lg-6">
                     <div class="service-item">
                         <div class="service-icon">
                             <i class="fa fa-drafting-compass"></i>
@@ -453,7 +426,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="col-lg-6">
                     <div class="service-item">
                         <div class="service-icon">
                             <i class="fa fa-cogs"></i>
@@ -466,7 +439,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="col-lg-6">
                     <div class="service-item">
                         <div class="service-icon">
                             <i class="fa fa-exclamation-triangle"></i>
@@ -479,7 +452,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="col-lg-6">
                     <div class="service-item">
                         <div class="service-icon">
                             <i class="fa fa-code"></i>
@@ -502,7 +475,7 @@
         <div class="container">
             <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                 <p>My Resume</p>
-                <h2>Working Experience</h2>
+                <h2>Work Experience</h2>
             </header>
             <div class="timeline">
                 <div class="timeline-item left">
@@ -567,22 +540,113 @@
     </div>
     <!-- Education End -->
 
-    <!-- Why Hire Me Start -->
-    <div class="banner wow zoomIn" data-wow-delay="0.1s">
+    <!-- Proficiency Softwares Start -->
+    <div class="software-section" id="software">
         <div class="container">
-            <div class="section-header text-center">
-                <p>Why Hire Me</p>
-                <h2>Expertise You Can Trust</h2>
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>My Skills</p>
+                <h2>Proficiency Softwares</h2>
             </div>
-            <div class="container banner-text">
-                <p>
-                    With 3 years of specialized experience in BIM modeling using Civil 3D and Revit, I deliver high-quality, precise models for complex infrastructure projects. My expertise in clash detection, parametric family creation, and basic automation with Dynamo ensures efficient and accurate project delivery. I am committed to adhering to BEP standards and IFC compliance, making me a reliable partner for your next project.
-                </p>
-                <a class="btn" href="mailto:lkulandaiyesu@gmail.com?subject=Hire%20Kulandai%20Yesu%20for%20BIM%20Modeling">Hire Me Now</a>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-cube"></i>
+                        </div>
+                        <h3>Revit</h3>
+                        <p>Architect modelling, sheet, schedule, family creation, and basic level MEP works.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-road"></i>
+                        </div>
+                        <h3>Civil 3D</h3>
+                        <p>Utilities modelling (wet and dry), creating pressure pipe catalog, profiles, and labels.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-exclamation-circle"></i>
+                        </div>
+                        <h3>Navisworks</h3>
+                        <p>Clash exporting and solving.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-pencil-ruler"></i>
+                        </div>
+                        <h3>AutoCAD</h3>
+                        <p>2D Drafting works.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-table"></i>
+                        </div>
+                        <h3>MS Excel</h3>
+                        <p>General proficiency for data management.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="software-item">
+                        <div class="software-icon">
+                            <i class="fa fa-file-word"></i>
+                        </div>
+                        <h3>MS Word</h3>
+                        <p>General proficiency for documentation.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Why Hire Me End -->
+    <!-- Proficiency Softwares End -->
+
+    <!-- Skills Start -->
+    <div class="skills" id="skills">
+        <div class="container">
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>My Skills</p>
+                <h2>Professional Skills</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-item">
+                        <i class="fa fa-lightbulb"></i>
+                        <h3>Problem Solving</h3>
+                        <p>Proficient in analyzing complex issues and devising effective solutions to ensure project accuracy and efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-item">
+                        <i class="fa fa-brain"></i>
+                        <h3>Quick Learning</h3>
+                        <p>Adaptable and fast at mastering new tools, techniques, and standards to meet evolving project demands.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-item">
+                        <i class="fa fa-users"></i>
+                        <h3>Teamwork & Solo Work</h3>
+                        <p>Excel in collaborative environments and independently, ensuring seamless coordination and high-quality deliverables.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-item">
+                        <i class="fa fa-clock"></i>
+                        <h3>On-Time Delivery</h3>
+                        <p>Committed to meeting deadlines with precise and high-quality outputs, ensuring project milestones are achieved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Skills End -->
 
     <!-- Portfolio Start -->
     <div class="portfolio" id="portfolio">
@@ -685,8 +749,8 @@
     </div>
     <!-- Portfolio End -->
 
-    <!-- Let's Work Together Start -->
-    <div class="banner wow zoomIn" data-wow-delay="0.1s">
+    <!-- Collaborate for Success Start -->
+    <div class="banner wow zoomIn" data-wow-delay="0.1s" id="collaborate">
         <div class="container">
             <div class="section-header text-center">
                 <p>Let’s Work Together</p>
@@ -700,48 +764,7 @@
             </div>
         </div>
     </div>
-    <!-- Let's Work Together End -->
-
-    <!-- Skills Start -->
-    <div class="skills" id="skills">
-        <div class="container">
-            <div class="section-header text-center">
-                <p>My Skills</p>
-                <h2>Professional Skills</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-item">
-                        <i class="fa fa-lightbulb"></i>
-                        <h3>Problem Solving</h3>
-                        <p>Proficient in analyzing complex issues and devising effective solutions to ensure project accuracy and efficiency.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-item">
-                        <i class="fa fa-brain"></i>
-                        <h3>Quick Learning</h3>
-                        <p>Adaptable and fast at mastering new tools, techniques, and standards to meet evolving project demands.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-item">
-                        <i class="fa fa-users"></i>
-                        <h3>Teamwork & Solo Work</h3>
-                        <p>Excel in collaborative environments and independently, ensuring seamless coordination and high-quality deliverables.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="skill-item">
-                        <i class="fa fa-clock"></i>
-                        <h3>On-Time Delivery</h3>
-                        <p>Committed to meeting deadlines with precise and high-quality outputs, ensuring project milestones are achieved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Skills End -->
+    <!-- Collaborate for Success End -->
 
     <!-- Contact Start -->
     <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
@@ -787,59 +810,6 @@
         </div>
     </div>
     <!-- Contact End -->
-
-    <!-- Blog Start -->
-    <div class="blog" id="blog">
-        <div class="container">
-            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>From Blog</p>
-                <h2>Latest Articles</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="blog-img">
-                            <img src="img/blog-1.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Advancements in BIM for Infrastructure</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Kulandai Yesu L</p>
-                                <p><i class="far fa-list-alt"></i>BIM Technology</p>
-                                <p><i class="far fa-calendar-alt"></i>15-May-2025</p>
-                                <p><i class="far fa-comments"></i>5</p>
-                            </div>
-                            <p>
-                                Exploring the latest trends in BIM modeling for infrastructure projects, including automation and clash detection techniques.
-                            </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="blog-img">
-                            <img src="img/blog-2.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Optimizing Revit Workflows with Dynamo</h2>
-                            <div class="blog-meta">
-                                <p><i class="far fa-user"></i>Kulandai Yesu L</p>
-                                <p><i class="far fa-list-alt"></i>Revit Automation</p>
-                                <p><i class="far fa-calendar-alt"></i>10-May-2025</p>
-                                <p><i class="far fa-comments"></i>8</p>
-                            </div>
-                            <p>
-                                A guide to using Dynamo for basic automation tasks in Revit, enhancing project efficiency.
-                            </p>
-                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Blog End -->
 
     <!-- Footer Start -->
     <div class="footer wow fadeIn" data-wow-delay="0.3s">
@@ -894,8 +864,8 @@
             // Initialize WOW.js
             new WOW().init();
 
-            // Animation trigger for timeline, software, and skill items
-            const animatedItems = document.querySelectorAll('.timeline-item, .software-item, .skill-item');
+            // Animation trigger for timeline, software, skill, and service items
+            const animatedItems = document.querySelectorAll('.timeline-item, .software-item, .skill-item, .service-item');
             const observerOptions = {
                 threshold: 0.2 // Trigger when 20% of the item is visible
             };
