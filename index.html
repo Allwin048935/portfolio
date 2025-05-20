@@ -29,14 +29,6 @@
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            opacity: 0;
-            will-change: transform, opacity;
-            transform: translateY(100%);
-            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
-        }
-        .software-item.animate {
-            opacity: 1;
-            transform: translateY(0);
         }
         .software-item:hover {
             transform: translateY(-5px) scale(1.02);
@@ -70,19 +62,6 @@
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            opacity: 0;
-            will-change: transform, opacity;
-            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
-        }
-        .skill-item:nth-child(odd) {
-            transform: translateX(-100%);
-        }
-        .skill-item:nth-child(even) {
-            transform: translateX(100%);
-        }
-        .skill-item.animate {
-            opacity: 1;
-            transform: translateX(0);
         }
         .skill-item:hover {
             transform: translateY(-5px) scale(1.02);
@@ -115,14 +94,6 @@
             border-radius: 10px;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            opacity: 0;
-            will-change: transform, opacity;
-            transform: translateY(100%);
-            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
-        }
-        .service-item.animate {
-            opacity: 1;
-            transform: translateY(0);
         }
         .service-item:hover {
             transform: translateY(-5px) scale(1.02);
@@ -154,32 +125,23 @@
             width: 50%;
             padding: 20px;
             box-sizing: border-box;
-            opacity: 0;
-            will-change: transform, opacity;
-            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .timeline-item.left {
             left: 0;
-            transform: translateY(100%); /* Changed to move from below */
         }
         .timeline-item.right {
             left: 50%;
-            transform: translateY(100%); /* Changed to move from below */
-        }
-        .timeline-item.animate {
-            opacity: 1;
-            transform: translateY(0); /* Move to original position */
         }
         .timeline-item::before {
             content: '';
             position: absolute;
-            width: 4px; /* Thicker line */
-            height: 16px; /* Matches circle height */
-            background: #ff0000; /* Red line */
-            top: 20px; /* Align with circle top */
+            width: 4px;
+            height: 16px;
+            background: #ff0000;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 2; /* Behind circle, above items */
+            z-index: 2;
             border-radius: 2px;
         }
         .timeline-text {
@@ -188,7 +150,7 @@
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: relative;
-            z-index: 4; /* Above line and circles */
+            z-index: 4;
             transition: all 0.3s ease;
         }
         .timeline-text:hover {
@@ -197,7 +159,7 @@
         }
         .timeline-date {
             font-size: 16px;
-            color: #ff0000; /* Match red theme */
+            color: #ff0000;
             margin-bottom: 10px;
             font-weight: 500;
         }
@@ -225,16 +187,16 @@
             position: absolute;
             width: 16px;
             height: 16px;
-            background: #ff0000; /* Filled red circle */
+            background: #ff0000;
             border-radius: 50%;
             top: 20px;
-            z-index: 3; /* Above line, below text */
+            z-index: 3;
         }
         .timeline-item.left::after {
-            right: -8px; /* Center line within circle */
+            right: -8px;
         }
         .timeline-item.right::after {
-            left: -7px; /* Adjusted to center 4px line */
+            left: -7px;
         }
 
         /* Portfolio Styles */
@@ -281,7 +243,7 @@
             transition: background 0.3s ease;
         }
         .portfolio-overlay a:hover {
-            background: #ff0000; /* Match red theme */
+            background: #ff0000;
             border-color: #ff0000;
         }
 
@@ -335,39 +297,20 @@
             .timeline-item {
                 width: 100%;
                 left: 0 !important;
-                transform: translateY(50%); /* Changed to move from below */
-            }
-            .timeline-item.right {
-                transform: translateY(50%); /* Changed to move from below */
-            }
-            .timeline-item.animate {
-                transform: translateY(0); /* Move to original position */
             }
             .timeline-item::before {
-                left: 20px; /* Line on left */
+                left: 20px;
                 transform: translateX(0);
             }
             .timeline-item.left::after,
             .timeline-item.right::after {
-                left: 14px; /* Adjusted to center 4px line */
+                left: 14px;
             }
             .timeline-item.left .timeline-text::before,
             .timeline-item.right .timeline-text::before {
                 left: -15px;
                 border-width: 10px 15px 10px 0;
                 border-color: transparent #ffffff transparent transparent;
-            }
-            .software-item, .service-item {
-                transform: translateY(50%);
-            }
-            .software-item.animate, .service-item.animate {
-                transform: translateY(0);
-            }
-            .skill-item {
-                transform: translateY(50%);
-            }
-            .skill-item.animate {
-                transform: translateY(0);
             }
         }
     </style>
@@ -400,7 +343,7 @@
     <!-- Nav Bar End -->
 
     <!-- Hero Start -->
-    <div class="hero" id="home">
+    <div class="hero wow fadeInUp" data-wow-delay="0.1s" id="home">
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-sm-12 col-md-6">
@@ -459,7 +402,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="service-item">
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.0s">
                         <div class="service-icon">
                             <i class="fa fa-drafting-compass"></i>
                         </div>
@@ -472,7 +415,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="service-item">
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.2s">
                         <div class="service-icon">
                             <i class="fa fa-cogs"></i>
                         </div>
@@ -485,11 +428,11 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="service-item">
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.4s">
                         <div class="service-icon">
                             <i class="fa fa-exclamation-triangle"></i>
                         </div>
-                        <div class Wines="service-text">
+                        <div class="service-text">
                             <h3>Clash Detection & Resolution</h3>
                             <p>
                                 Utilizing Navisworks to identify and resolve model clashes, ensuring seamless integration of utility and infrastructure systems.
@@ -498,7 +441,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="service-item">
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.6s">
                         <div class="service-icon">
                             <i class="fa fa-code"></i>
                         </div>
@@ -520,10 +463,10 @@
         <div class="container">
             <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                 <p>My Resume</p>
-                <h2>Working Experience</h2>
+                <h2>Work Experience</h2>
             </header>
             <div class="timeline">
-                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">March 2023 - Present</div>
                         <h2>Senior BIM Modeler</h2>
@@ -533,7 +476,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="timeline-item right wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">Aug 2022 - March 2023</div>
                         <h2>Junior BIM Modeler</h2>
@@ -556,7 +499,7 @@
                 <h2>Academic Background</h2>
             </header>
             <div class="timeline">
-                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">2017 - 2021</div>
                         <h2>B.E. in Civil Engineering</h2>
@@ -564,7 +507,7 @@
                         <p>Graduated with a 7.3 CGPA, specializing in civil engineering principles and infrastructure design.</p>
                     </div>
                 </div>
-                <div class="timeline-item right wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">2015 - 2017</div>
                         <h2>Higher Secondary Education</h2>
@@ -572,7 +515,7 @@
                         <p>Achieved 84.6% in HSE, focusing on Science and Bio-Mathematics.</p>
                     </div>
                 </div>
-                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                     <div class="timeline-text">
                         <div class="timeline-date">2014 - 2015</div>
                         <h2>Secondary School Leaving Certificate</h2>
@@ -594,7 +537,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="software-item">
+                    <div class="software-item wow fadeInUp" data-wow-delay="0.0s">
                         <div class="software-icon">
                             <i class="fa fa-cube"></i>
                         </div>
@@ -603,7 +546,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="software-item">
+                    <div class="software-item wow fadeInUp" data-wow-delay="0.2s">
                         <div class="software-icon">
                             <i class="fa fa-road"></i>
                         </div>
@@ -612,7 +555,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="software-item">
+                    <div class="software-item wow fadeInUp" data-wow-delay="0.4s">
                         <div class="software-icon">
                             <i class="fa fa-exclamation-circle"></i>
                         </div>
@@ -621,7 +564,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="software-item">
+                    <div class="software-item wow fadeInUp" data-wow-delay="0.6s">
                         <div class="software-icon">
                             <i class="fa fa-pencil-ruler"></i>
                         </div>
@@ -630,7 +573,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="software-item">
+                    <div class="software-item wow fadeInUp" data-wow-delay="0.8s">
                         <div class="software-icon">
                             <i class="fa fa-table"></i>
                         </div>
@@ -639,7 +582,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="software-item">
+                    <div class="software-item wow fadeInUp" data-wow-delay="1.0s">
                         <div class="software-icon">
                             <i class="fa fa-file-word"></i>
                         </div>
@@ -661,28 +604,28 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <div class="skill-item">
+                    <div class="skill-item wow fadeInUp" data-wow-delay="0.0s">
                         <i class="fa fa-lightbulb"></i>
                         <h3>Problem Solving</h3>
                         <p>Proficient in analyzing complex issues and devising effective solutions to ensure project accuracy and efficiency.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="skill-item">
+                    <div class="skill-item wow fadeInUp" data-wow-delay="0.2s">
                         <i class="fa fa-brain"></i>
                         <h3>Quick Learning</h3>
                         <p>Adaptable and fast at mastering new tools, techniques, and standards to meet evolving project demands.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="skill-item">
+                    <div class="skill-item wow fadeInUp" data-wow-delay="0.4s">
                         <i class="fa fa-users"></i>
                         <h3>Teamwork & Solo Work</h3>
                         <p>Excel in collaborative environments and independently, ensuring seamless coordination and high-quality deliverables.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="skill-item">
+                    <div class="skill-item wow fadeInUp" data-wow-delay="0.6s">
                         <i class="fa fa-clock"></i>
                         <h3>On-Time Delivery</h3>
                         <p>Committed to meeting deadlines with precise and high-quality outputs, ensuring project milestones are achieved.</p>
@@ -961,25 +904,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize WOW.js
             new WOW().init();
-
-            // Animation trigger for timeline, software, skill, and service items
-            const animatedItems = document.querySelectorAll('.timeline-item, .software-item, .skill-item, .service-item');
-            const observerOptions = {
-                threshold: 0.2 // Trigger when 20% of the item is visible
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                        observer.unobserve(entry.target); // Stop observing once animated
-                    }
-                });
-            }, observerOptions);
-
-            animatedItems.forEach(item => {
-                observer.observe(item);
-            });
 
             // Portfolio overlay touch events
             const portfolioImages = document.querySelectorAll('.portfolio-img');
