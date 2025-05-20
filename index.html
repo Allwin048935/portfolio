@@ -174,7 +174,7 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            width: 3px; /* Thinner line */
+            width: 4px; /* Slightly thicker line */
             height: 16px; /* Matches circle height */
             background: #ff0000; /* Red line */
             top: 20px; /* Align with circle top */
@@ -226,17 +226,16 @@
             position: absolute;
             width: 16px;
             height: 16px;
-            background: transparent; /* Transparent center */
-            border: 2px solid #ff0000; /* Red border */
+            background: #ff0000; /* Filled red circle */
             border-radius: 50%;
             top: 20px;
             z-index: 3; /* Above line, below text */
         }
         .timeline-item.left::after {
-            right: -8px;
+            right: -8px; /* Center line within circle */
         }
         .timeline-item.right::after {
-            left: -8px;
+            left: -8px; /* Center line within circle */
         }
 
         /* Portfolio Styles */
@@ -351,7 +350,7 @@
             }
             .timeline-item.left::after,
             .timeline-item.right::after {
-                left: 12px; /* Circle aligned with line */
+                left: 12px; /* Circle aligned with 4px line */
             }
             .timeline-item.left .timeline-text::before,
             .timeline-item.right .timeline-text::before {
