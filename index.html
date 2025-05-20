@@ -31,12 +31,12 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             opacity: 0;
             will-change: transform, opacity;
-            transform: translateY(100%); /* Start below, like services */
+            transform: translateY(100%);
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .software-item.animate {
             opacity: 1;
-            transform: translateY(0); /* Move to final position */
+            transform: translateY(0);
         }
         .software-item:hover {
             transform: translateY(-5px) scale(1.02);
@@ -75,10 +75,10 @@
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .skill-item:nth-child(odd) {
-            transform: translateX(-100%); /* Slide from left */
+            transform: translateX(-100%);
         }
         .skill-item:nth-child(even) {
-            transform: translateX(100%); /* Slide from right */
+            transform: translateX(100%);
         }
         .skill-item.animate {
             opacity: 1;
@@ -117,7 +117,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             opacity: 0;
             will-change: transform, opacity;
-            transform: translateY(100%); /* Start below */
+            transform: translateY(100%);
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .service-item.animate {
@@ -149,20 +149,6 @@
             position: relative;
             padding: 40px 0;
         }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background: #ff0000; /* Red line */
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 3px;
-            z-index: 2; /* Above items, below text */
-            border: none;
-            box-shadow: none;
-        }
         .timeline-item {
             position: relative;
             width: 50%;
@@ -185,13 +171,25 @@
             transform: translateX(0);
             transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
         }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 3px; /* Thinner line */
+            height: 16px; /* Matches circle height */
+            background: #ff0000; /* Red line */
+            top: 20px; /* Align with circle top */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2; /* Behind circle, above items */
+            border-radius: 2px;
+        }
         .timeline-text {
             background: #ffffff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: relative;
-            z-index: 3; /* Above line and circles */
+            z-index: 4; /* Above line and circles */
             transition: all 0.3s ease;
         }
         .timeline-text:hover {
@@ -229,7 +227,7 @@
             width: 16px;
             height: 16px;
             background: transparent; /* Transparent center */
-            border: 2px solid #ff0000; /* Red border to match line */
+            border: 2px solid #ff0000; /* Red border */
             border-radius: 50%;
             top: 20px;
             z-index: 3; /* Above line, below text */
@@ -336,9 +334,6 @@
 
         /* Responsive Adjustments */
         @media (max-width: 767.98px) {
-            .timeline::before {
-                left: 20px;
-            }
             .timeline-item {
                 width: 100%;
                 left: 0 !important;
@@ -350,9 +345,13 @@
             .timeline-item.animate {
                 transform: translateX(0);
             }
+            .timeline-item::before {
+                left: 20px; /* Line on left */
+                transform: translateX(0);
+            }
             .timeline-item.left::after,
             .timeline-item.right::after {
-                left: 12px;
+                left: 12px; /* Circle aligned with line */
             }
             .timeline-item.left .timeline-text::before,
             .timeline-item.right .timeline-text::before {
@@ -361,13 +360,13 @@
                 border-color: transparent #ffffff transparent transparent;
             }
             .software-item, .service-item {
-                transform: translateY(50%); /* Start below for mobile */
+                transform: translateY(50%);
             }
             .software-item.animate, .service-item.animate {
                 transform: translateY(0);
             }
             .skill-item {
-                transform: translateY(50%); /* Simplified for mobile */
+                transform: translateY(50%);
             }
             .skill-item.animate {
                 transform: translateY(0);
