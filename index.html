@@ -30,14 +30,14 @@
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             opacity: 0;
-            will-change: transform, opacity; /* Optimize rendering */
+            will-change: transform, opacity;
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .software-item:nth-child(odd) {
-            transform: translateX(-100%); /* Slide from left */
+            transform: translateX(-100%);
         }
         .software-item:nth-child(even) {
-            transform: translateX(100%); /* Slide from right */
+            transform: translateX(100%);
         }
         .software-item.animate {
             opacity: 1;
@@ -80,10 +80,10 @@
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .skill-item:nth-child(odd) {
-            transform: translateX(-100%); /* Slide from left */
+            transform: translateX(-100%);
         }
         .skill-item:nth-child(even) {
-            transform: translateX(100%); /* Slide from right */
+            transform: translateX(100%);
         }
         .skill-item.animate {
             opacity: 1;
@@ -122,7 +122,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             opacity: 0;
             will-change: transform, opacity;
-            transform: translateY(100%); /* Start below */
+            transform: translateY(100%);
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .service-item.animate {
@@ -158,13 +158,15 @@
             content: '';
             position: absolute;
             width: 6px;
-            background: #007bff; /* Single blue line */
+            background: #ff0000; /* Red line */
             top: 0;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             border-radius: 3px;
-            z-index: 1; /* Ensure above other elements */
+            z-index: 2; /* Above items, below text */
+            border: none;
+            box-shadow: none;
         }
         .timeline-item {
             position: relative;
@@ -173,7 +175,7 @@
             box-sizing: border-box;
             opacity: 0;
             will-change: transform, opacity;
-            transition: opacity 0.8s ease; /* Slightly faster for performance */
+            transition: opacity 0.8s ease;
         }
         .timeline-item.left {
             left: 0;
@@ -194,7 +196,7 @@
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: relative;
-            z-index: 2; /* Above timeline line */
+            z-index: 3; /* Above line and circles */
             transition: all 0.3s ease;
         }
         .timeline-text:hover {
@@ -203,7 +205,7 @@
         }
         .timeline-date {
             font-size: 16px;
-            color: #007bff;
+            color: #ff0000; /* Match red theme */
             margin-bottom: 10px;
             font-weight: 500;
         }
@@ -231,11 +233,11 @@
             position: absolute;
             width: 16px;
             height: 16px;
-            background: #007bff;
-            border: 2px solid #ffffff;
+            background: transparent; /* Transparent center */
+            border: 2px solid #ff0000; /* Red border to match line */
             border-radius: 50%;
             top: 20px;
-            z-index: 2;
+            z-index: 3; /* Above line, below text */
         }
         .timeline-item.left::after {
             right: -8px;
@@ -288,8 +290,8 @@
             transition: background 0.3s ease;
         }
         .portfolio-overlay a:hover {
-            background: #007bff;
-            border-color: #007bff;
+            background: #ff0000; /* Match red theme */
+            border-color: #ff0000;
         }
 
         /* Contact Info Styles */
@@ -364,7 +366,7 @@
                 border-color: transparent #ffffff transparent transparent;
             }
             .software-item, .skill-item, .service-item {
-                transform: translateY(50%); /* Start below for mobile */
+                transform: translateY(50%);
             }
             .software-item.animate, .skill-item.animate, .service-item.animate {
                 transform: translateY(0);
@@ -440,7 +442,7 @@
                         </div>
                         <div class="about-text">
                             <p>
-                                I am a Senior BIM Modeler with 3 years of experience at HSS BIM Solutions PVT.LTD., specializing in Civil 3D and Revit for overseas infrastructure projects. I have modeled complex utility networks (water supply, sewage, drainage, electrical, telecom, and bridges) and developed parametric Revit families for infrastructure components, adhering to BEP standards. Proficient in clash detection using Navisworks and familiar with using Dynamo for basic automation, I ensure seamless system integration and IFC compliance for projects in Malaysia, Saudi Arabia, and France. <a href="#portfolio" style="text-decoration: none; color: #007bff;">...</a>
+                                I am a Senior BIM Modeler with 3 years of experience at HSS BIM Solutions PVT.LTD., specializing in Civil 3D and Revit for overseas infrastructure projects. I have modeled complex utility networks (water supply, sewage, drainage, electrical, telecom, and bridges) and developed parametric Revit families for infrastructure components, adhering to BEP standards. Proficient in clash detection using Navisworks and familiar with using Dynamo for basic automation, I ensure seamless system integration and IFC compliance for projects in Malaysia, Saudi Arabia, and France. <a href="#portfolio" style="text-decoration: none; color: #ff0000;">...</a>
                             </p>
                         </div>
                     </div>
