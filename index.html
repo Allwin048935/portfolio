@@ -17,6 +17,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <style>
+        /* Software Section Styles */
         .software-section {
             background: #ffffff;
             padding: 60px 0;
@@ -28,10 +29,22 @@
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            opacity: 0; /* Start invisible for animation */
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+        }
+        .software-item:nth-child(odd) {
+            transform: translateX(-100%); /* Slide in from left for odd items */
+        }
+        .software-item:nth-child(even) {
+            transform: translateX(100%); /* Slide in from right for even items */
+        }
+        .software-item.animate {
+            opacity: 1;
+            transform: translateX(0); /* Move to final position */
         }
         .software-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02); /* Subtle hover effect */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
         .software-item h3 {
             color: #333;
@@ -48,6 +61,8 @@
             color: #ff0000;
             margin-bottom: 15px;
         }
+
+        /* Skills Section Styles */
         .skills {
             padding: 60px 0;
             background: #f8f9fa;
@@ -59,10 +74,22 @@
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            opacity: 0; /* Start invisible for animation */
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+        }
+        .skill-item:nth-child(odd) {
+            transform: translateX(-100%); /* Slide in from left for odd items */
+        }
+        .skill-item:nth-child(even) {
+            transform: translateX(100%); /* Slide in from right for even items */
+        }
+        .skill-item.animate {
+            opacity: 1;
+            transform: translateX(0); /* Move to final position */
         }
         .skill-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.02); /* Subtle hover effect */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
         .skill-item i {
             font-size: 40px;
@@ -79,12 +106,99 @@
             font-size: 16px;
             line-height: 1.6;
         }
-        .contact-info, .contact-info p, .contact-info a {
-            color: #ffffff !important;
+
+        /* Timeline Styles for Experience and Education */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
         }
-        .contact-info, .contact-form {
-            background: none !important;
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: #007bff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 3px;
         }
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0; /* Start invisible for animation */
+            transition: opacity 0.3s ease;
+        }
+        .timeline-item.left {
+            left: 0;
+            transform: translateX(-100%); /* Start off-screen to the left */
+        }
+        .timeline-item.right {
+            left: 50%;
+            transform: translateX(100%); /* Start off-screen to the right */
+        }
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateX(0); /* Move to center */
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+        }
+        .timeline-text {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .timeline-text:hover {
+            transform: scale(1.02); /* Subtle scale on hover */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .timeline-date {
+            font-size: 16px;
+            color: #007bff;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .timeline-item.left .timeline-text::before,
+        .timeline-item.right .timeline-text::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        .timeline-item.left .timeline-text::before {
+            right: -15px;
+            border-width: 10px 0 10px 15px;
+            border-color: transparent transparent transparent #ffffff;
+        }
+        .timeline-item.right .timeline-text::before {
+            left: -15px;
+            border-width: 10px 15px 10px 0;
+            border-color: transparent #ffffff transparent transparent;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #007bff;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            top: 20px;
+        }
+        .timeline-item.left::after {
+            right: -8px;
+        }
+        .timeline-item.right::after {
+            left: -8px;
+        }
+
+        /* Portfolio Styles */
         .portfolio-img {
             position: relative;
             overflow: hidden;
@@ -130,6 +244,48 @@
         .portfolio-overlay a:hover {
             background: #007bff;
             border-color: #007bff;
+        }
+
+        /* Contact Info Styles */
+        .contact-info, .contact-info p, .contact-info a {
+            color: #ffffff !important;
+        }
+        .contact-info, .contact-form {
+            background: none !important;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 767.98px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                transform: translateX(-50%); /* Start slightly off-screen for mobile */
+            }
+            .timeline-item.right {
+                transform: translateX(-50%);
+            }
+            .timeline-item.animate {
+                transform: translateX(0);
+            }
+            .timeline-item.left::after,
+            .timeline-item.right::after {
+                left: 12px;
+            }
+            .timeline-item.left .timeline-text::before,
+            .timeline-item.right .timeline-text::before {
+                left: -15px;
+                border-width: 10px 15px 10px 0;
+                border-color: transparent #ffffff transparent transparent;
+            }
+            .software-item, .skill-item {
+                transform: translateX(-50%); /* Start slightly off-screen for mobile */
+            }
+            .software-item.animate, .skill-item.animate {
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
@@ -218,7 +374,7 @@
                 <h2>Proficiency Softwares</h2>
             </div>
             <div class="row">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+                <div class="col-lg-6">
                     <div class="software-item">
                         <div class="software-icon">
                             <i class="fa fa-cube"></i>
@@ -227,7 +383,7 @@
                         <p>Architect modelling, sheet, schedule, family creation, and basic level MEP works.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="col-lg-6">
                     <div class="software-item">
                         <div class="software-icon">
                             <i class="fa fa-road"></i>
@@ -236,7 +392,7 @@
                         <p>Utilities modelling (wet and dry), creating pressure pipe catalog, profiles, and labels.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="col-lg-6">
                     <div class="software-item">
                         <div class="software-icon">
                             <i class="fa fa-exclamation-circle"></i>
@@ -245,7 +401,7 @@
                         <p>Clash exporting and solving.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="col-lg-6">
                     <div class="software-item">
                         <div class="software-icon">
                             <i class="fa fa-pencil-ruler"></i>
@@ -253,7 +409,7 @@
                         <p>2D Drafting works.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="col-lg-6">
                     <div class="software-item">
                         <div class="software-icon">
                             <i class="fa fa-table"></i>
@@ -262,7 +418,7 @@
                         <p>General proficiency for data management.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="1.0s">
+                <div class="col-lg-6">
                     <div class="software-item">
                         <div class="software-icon">
                             <i class="fa fa-file-word"></i>
@@ -276,8 +432,7 @@
     </div>
     <!-- Proficiency Softwares End -->
 
-    
-   <!-- Service Start -->
+    <!-- Service Start -->
     <div class="service" id="service">
         <div class="container">
             <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
@@ -350,7 +505,7 @@
                 <h2>Working Experience</h2>
             </header>
             <div class="timeline">
-                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item left">
                     <div class="timeline-text">
                         <div class="timeline-date">March 2023 - Present</div>
                         <h2>Senior BIM Modeler</h2>
@@ -360,7 +515,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="timeline-item right wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item right">
                     <div class="timeline-text">
                         <div class="timeline-date">Aug 2022 - March 2023</div>
                         <h2>Junior BIM Modeler</h2>
@@ -383,7 +538,7 @@
                 <h2>Academic Background</h2>
             </header>
             <div class="timeline">
-                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item left">
                     <div class="timeline-text">
                         <div class="timeline-date">2017 - 2021</div>
                         <h2>B.E. in Civil Engineering</h2>
@@ -391,7 +546,7 @@
                         <p>Graduated with a 7.3 CGPA, specializing in civil engineering principles and infrastructure design.</p>
                     </div>
                 </div>
-                <div class="timeline-item right wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item right">
                     <div class="timeline-text">
                         <div class="timeline-date">2015 - 2017</div>
                         <h2>Higher Secondary Education</h2>
@@ -399,7 +554,7 @@
                         <p>Achieved 84.6% in HSE, focusing on Science and Bio-Mathematics.</p>
                     </div>
                 </div>
-                <div class="timeline-item left wow fadeInUp" data-wow-delay="0.1s">
+                <div class="timeline-item left">
                     <div class="timeline-text">
                         <div class="timeline-date">2014 - 2015</div>
                         <h2>Secondary School Leaving Certificate</h2>
@@ -548,35 +703,35 @@
     <!-- Let's Work Together End -->
 
     <!-- Skills Start -->
-    <div class="skills wow fadeInUp" data-wow-delay="0.1s" id="skills">
+    <div class="skills" id="skills">
         <div class="container">
             <div class="section-header text-center">
                 <p>My Skills</p>
                 <h2>Professional Skills</h2>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="col-lg-4 col-md-6">
                     <div class="skill-item">
                         <i class="fa fa-lightbulb"></i>
                         <h3>Problem Solving</h3>
                         <p>Proficient in analyzing complex issues and devising effective solutions to ensure project accuracy and efficiency.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="col-lg-4 col-md-6">
                     <div class="skill-item">
                         <i class="fa fa-brain"></i>
                         <h3>Quick Learning</h3>
                         <p>Adaptable and fast at mastering new tools, techniques, and standards to meet evolving project demands.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="col-lg-4 col-md-6">
                     <div class="skill-item">
                         <i class="fa fa-users"></i>
                         <h3>Teamwork & Solo Work</h3>
                         <p>Excel in collaborative environments and independently, ensuring seamless coordination and high-quality deliverables.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                <div class="col-lg-4 col-md-6">
                     <div class="skill-item">
                         <i class="fa fa-clock"></i>
                         <h3>On-Time Delivery</h3>
@@ -687,7 +842,7 @@
     <!-- Blog End -->
 
     <!-- Footer Start -->
-    <div class="footer wow fadeIn" paesi data-wow-delay="0.3s">
+    <div class="footer wow fadeIn" data-wow-delay="0.3s">
         <div class="container-fluid">
             <div class="container">
                 <div class="footer-info">
@@ -733,11 +888,33 @@
     <!-- Template Javascript -->
     <script defer src="js/main.js"></script>
 
-    <!-- Touch Event Script for Portfolio Overlay -->
+    <!-- Animation Trigger Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const portfolioImages = document.querySelectorAll('.portfolio-img');
+            // Initialize WOW.js
+            new WOW().init();
 
+            // Animation trigger for timeline, software, and skill items
+            const animatedItems = document.querySelectorAll('.timeline-item, .software-item, .skill-item');
+            const observerOptions = {
+                threshold: 0.2 // Trigger when 20% of the item is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+
+            animatedItems.forEach(item => {
+                observer.observe(item);
+            });
+
+            // Portfolio overlay touch events
+            const portfolioImages = document.querySelectorAll('.portfolio-img');
             portfolioImages.forEach(img => {
                 img.addEventListener('touchstart', function() {
                     const overlay = this.querySelector('.portfolio-overlay');
@@ -753,7 +930,6 @@
                     }
                 });
             });
-ósito: true
         });
     </script>
 </body>
