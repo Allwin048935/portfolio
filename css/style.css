@@ -129,6 +129,7 @@ a:focus {
     color: #414141;
 }
 
+
 /**********************************/
 /*********** Nav Bar CSS **********/
 /**********************************/
@@ -152,6 +153,7 @@ a:focus {
     font-weight: 700;
     letter-spacing: 2px;
     transition: .5s;
+    
 }
 
 .navbar .navbar-brand img {
@@ -235,6 +237,7 @@ a:focus {
         box-shadow: none;
     }
 }
+
 
 /*******************************/
 /********** Hero CSS ***********/
@@ -407,6 +410,7 @@ a:focus {
     }
 }
 
+
 /*******************************/
 /******* Section Header ********/
 /*******************************/
@@ -462,6 +466,7 @@ a:focus {
         font-size: 30px;
     }
 }
+
 
 /*******************************/
 /********** About CSS **********/
@@ -541,6 +546,7 @@ a:focus {
         padding: 45px 15px 0 15px;
     }
 }
+
 
 /*******************************/
 /******* Experience CSS ********/
@@ -717,6 +723,7 @@ a:focus {
     }
 }
 
+
 /*******************************/
 /********* Service CSS *********/
 /*******************************/
@@ -795,6 +802,7 @@ a:focus {
         font-size: 14px;
     }
 }
+
 
 /*******************************/
 /******** Portfolio CSS ********/
@@ -902,6 +910,7 @@ a:focus {
     border-color: #EF233C;
 }
 
+
 /*******************************/
 /********* Banner CSS **********/
 /*******************************/
@@ -958,6 +967,7 @@ a:focus {
     box-shadow: inset 0 0 0 0 #ffffff;
     border-color: #ffffff;
 }
+
 
 /*******************************/
 /********* Pricing CSS *********/
@@ -1076,6 +1086,7 @@ a:focus {
     box-shadow: inset 0 0 0 0 #EF233C;
     border-color: #EF233C;
 }
+
 
 /*******************************/
 /*********** Team CSS **********/
@@ -1197,6 +1208,7 @@ a:focus {
     }
 }
 
+
 /*******************************/
 /******* Testimonial CSS *******/
 /*******************************/
@@ -1286,6 +1298,7 @@ a:focus {
     background: #ffffff;
 }
 
+
 /*******************************/
 /********* Contact CSS *********/
 /*******************************/
@@ -1369,6 +1382,7 @@ a:focus {
     }
 }
 
+
 /*******************************/
 /*********** Blog CSS **********/
 /*******************************/
@@ -1443,6 +1457,7 @@ a:focus {
 .blog .blog-meta p:last-child {
     margin: 0;
 }
+
 
 /*******************************/
 /********* Footer CSS **********/
@@ -1572,180 +1587,5 @@ a:focus {
         font-size: 16px;
         line-height: 16px;
         padding: 0 5px;
-    }
-}
-
-/*******************************/
-/********* Education CSS ********/
-/*******************************/
-.education {
-    position: relative;
-    padding: 45px 0 15px 0;
-}
-
-.education .timeline {
-    position: relative;
-    width: 100%;
-}
-
-.education .timeline::after {
-    content: '';
-    position: absolute;
-    width: 2px;
-    background: #EF233C;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -1px;
-}
-
-.education .timeline .timeline-item {
-    position: relative;
-    background: inherit;
-    width: 50%;
-    margin-bottom: 30px;
-}
-
-.education .timeline .timeline-item.left {
-    left: 0;
-    padding-right: 30px;
-}
-
-.education .timeline .timeline-item.right {
-    left: 50%;
-    padding-left: 30px;
-}
-
-.education .timeline .timeline-item::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    top: 48px;
-    right: -8px;
-    background: #ffffff;
-    border: 2px solid #EF233C;
-    border-radius: 16px;
-    z-index: 1;
-}
-
-.education .timeline .timeline-item.right::after {
-    left: -8px;
-}
-
-.education .timeline .timeline-item::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: 46px;
-    right: 10px;
-    z-index: 1;
-    border: 10px solid;
-    border-color: transparent transparent transparent #dddddd;
-}
-
-.education .timeline .timeline-item.right::before {
-    left: 10px;
-    border-color: transparent #dddddd transparent transparent;
-}
-
-.education .timeline .timeline-date {
-    position: absolute;
-    width: 100%;
-    top: 44px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #EF233C;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    z-index: 1;
-}
-
-.education .timeline .timeline-item.left .timeline-date {
-    text-align: left;
-    left: calc(100% + 55px);
-}
-
-.education .timeline .timeline-item.right .timeline-date {
-    text-align: right;
-    right: calc(100% + 55px);
-}
-
-.education .timeline .timeline-text {
-    padding: 30px;
-    background: #ffffff;
-    position: relative;
-    border-right: 5px solid #dddddd;
-    box-shadow: 0 0 60px rgba(0, 0, 0, .08);
-}
-
-.education .timeline .timeline-item.right .timeline-text {
-    border-right: none;
-    border-left: 5px solid #dddddd;
-}
-
-.education .timeline .timeline-text h2 {
-    margin: 0 0 5px 0;
-    font-size: 22px;
-    font-weight: 600;
-}
-
-.education .timeline .timeline-text h4 {
-    margin: 0 0 10px 0;
-    font-size: 16px;
-    font-style: italic;
-    font-weight: 400;
-}
-
-.education .timeline .timeline-text p {
-    margin: 0;
-    font-size: 16px;
-}
-
-@media (max-width: 767.98px) {
-    .education .timeline::after {
-        left: 8px;
-    }
-
-    .education .timeline .timeline-item {
-        width: 100%;
-        padding-left: 38px;
-    }
-    
-    .education .timeline .timeline-item.left {
-        padding-right: 0;
-    }
-    
-    .education .timeline .timeline-item.right {
-        left: 0%;
-        padding-left: 38px;
-    }
-
-    .education .timeline .timeline-item.left::after, 
-    .education .timeline .timeline-item.right::after {
-        left: 0;
-    }
-    
-    .education .timeline .timeline-item.left::before,
-    .education .timeline .timeline-item.right::before {
-        left: 18px;
-        border-color: transparent #dddddd transparent transparent;
-    }
-    
-    .education .timeline .timeline-item.left .timeline-date,
-    .education .timeline .timeline-item.right .timeline-date {
-        position: relative;
-        top: 0;
-        right: auto;
-        left: 0;
-        text-align: left;
-        margin-bottom: 10px;
-    }
-    
-    .education .timeline .timeline-item.left .timeline-text,
-    .education .timeline .timeline-item.right .timeline-text {
-        border-right: none;
-        border-left: 5px solid #dddddd;
     }
 }
