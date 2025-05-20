@@ -29,21 +29,22 @@
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            opacity: 0; /* Start invisible */
+            opacity: 0;
+            will-change: transform, opacity; /* Optimize rendering */
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .software-item:nth-child(odd) {
-            transform: translateX(-100%); /* Slide from left for odd items */
+            transform: translateX(-100%); /* Slide from left */
         }
         .software-item:nth-child(even) {
-            transform: translateX(100%); /* Slide from right for even items */
+            transform: translateX(100%); /* Slide from right */
         }
         .software-item.animate {
             opacity: 1;
-            transform: translateX(0); /* Final position */
+            transform: translateX(0);
         }
         .software-item:hover {
-            transform: translateY(-5px) scale(1.02); /* Subtle hover effect */
+            transform: translateY(-5px) scale(1.02);
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
         .software-item h3 {
@@ -74,21 +75,22 @@
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            opacity: 0; /* Start invisible */
+            opacity: 0;
+            will-change: transform, opacity;
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .skill-item:nth-child(odd) {
-            transform: translateX(-100%); /* Slide from left for odd items */
+            transform: translateX(-100%); /* Slide from left */
         }
         .skill-item:nth-child(even) {
-            transform: translateX(100%); /* Slide from right for even items */
+            transform: translateX(100%); /* Slide from right */
         }
         .skill-item.animate {
             opacity: 1;
-            transform: translateX(0); /* Final position */
+            transform: translateX(0);
         }
         .skill-item:hover {
-            transform: translateY(-5px) scale(1.02); /* Subtle hover effect */
+            transform: translateY(-5px) scale(1.02);
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
         .skill-item i {
@@ -118,16 +120,17 @@
             border-radius: 10px;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            opacity: 0; /* Start invisible */
+            opacity: 0;
+            will-change: transform, opacity;
             transform: translateY(100%); /* Start below */
             transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
         }
         .service-item.animate {
             opacity: 1;
-            transform: translateY(0); /* Move to final position */
+            transform: translateY(0);
         }
         .service-item:hover {
-            transform: translateY(-5px) scale(1.02); /* Subtle hover effect */
+            transform: translateY(-5px) scale(1.02);
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
         .service-icon {
@@ -155,33 +158,35 @@
             content: '';
             position: absolute;
             width: 6px;
-            background: #007bff;
+            background: #007bff; /* Single blue line */
             top: 0;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             border-radius: 3px;
+            z-index: 1; /* Ensure above other elements */
         }
         .timeline-item {
             position: relative;
             width: 50%;
             padding: 20px;
             box-sizing: border-box;
-            opacity: 0; /* Start invisible */
-            transition: opacity 1s ease;
+            opacity: 0;
+            will-change: transform, opacity;
+            transition: opacity 0.8s ease; /* Slightly faster for performance */
         }
         .timeline-item.left {
             left: 0;
-            transform: translateX(-100%); /* Start off-screen left */
+            transform: translateX(-100%);
         }
         .timeline-item.right {
             left: 50%;
-            transform: translateX(100%); /* Start off-screen right */
+            transform: translateX(100%);
         }
         .timeline-item.animate {
             opacity: 1;
-            transform: translateX(0); /* Move to center */
-            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease;
+            transform: translateX(0);
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
         }
         .timeline-text {
             background: #ffffff;
@@ -189,10 +194,11 @@
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: relative;
+            z-index: 2; /* Above timeline line */
             transition: all 0.3s ease;
         }
         .timeline-text:hover {
-            transform: scale(1.02); /* Subtle hover effect */
+            transform: scale(1.02);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
         .timeline-date {
@@ -229,6 +235,7 @@
             border: 2px solid #ffffff;
             border-radius: 50%;
             top: 20px;
+            z-index: 2;
         }
         .timeline-item.left::after {
             right: -8px;
@@ -293,6 +300,43 @@
             background: none !important;
         }
 
+        /* Blog Section Styles */
+        .blog {
+            padding: 60px 0;
+            background: #ffffff;
+        }
+        .blog-item {
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .blog-img img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .blog-item:hover .blog-img img {
+            transform: scale(1.1);
+        }
+        .blog-text {
+            padding: 20px;
+        }
+        .blog-text h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .blog-meta p {
+            display: inline-block;
+            margin-right: 15px;
+            color: #666;
+        }
+        .blog-text p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
         /* Responsive Adjustments */
         @media (max-width: 767.98px) {
             .timeline::before {
@@ -301,7 +345,7 @@
             .timeline-item {
                 width: 100%;
                 left: 0 !important;
-                transform: translateX(-50%); /* Start slightly off-screen */
+                transform: translateX(-50%);
             }
             .timeline-item.right {
                 transform: translateX(-50%);
@@ -347,6 +391,7 @@
                     <a href="#skills" class="nav-item nav-link">Skills</a>
                     <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
                     <a href="#collaborate" class="nav-item nav-link">Collaborate</a>
+                    <a href="#blog" class="nav-item nav-link">Blog</a>
                     <a href="#contact" class="nav-item nav-link">Contact</a>
                 </div>
             </div>
@@ -460,7 +505,7 @@
                         <div class="service-text">
                             <h3>Automation with Dynamo</h3>
                             <p>
-                                Using Darcy for basic automation tasks like sheet creation and quantity takeoffs in Revit, ensuring IFC compliance for efficient data exchange.
+                                Using Dynamo for basic automation tasks like sheet creation and quantity takeoffs in Revit, ensuring IFC compliance for efficient data exchange.
                             </p>
                         </div>
                     </div>
@@ -765,6 +810,59 @@
         </div>
     </div>
     <!-- Collaborate for Success End -->
+
+    <!-- Blog Start -->
+    <div class="blog" id="blog">
+        <div class="container">
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>From Blog</p>
+                <h2>Latest Articles</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="blog-img">
+                            <img src="img/blog-1.jpg" alt="Blog">
+                        </div>
+                        <div class="blog-text">
+                            <h2>Advancements in BIM for Infrastructure</h2>
+                            <div class="blog-meta">
+                                <p><i class="far fa-user"></i>Kulandai Yesu L</p>
+                                <p><i class="far fa-list-alt"></i>BIM Technology</p>
+                                <p><i class="far fa-calendar-alt"></i>15-May-2025</p>
+                                <p><i class="far fa-comments"></i>5</p>
+                            </div>
+                            <p>
+                                Exploring the latest trends in BIM modeling for infrastructure projects, including automation and clash detection techniques.
+                            </p>
+                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="blog-img">
+                            <img src="img/blog-2.jpg" alt="Blog">
+                        </div>
+                        <div class="blog-text">
+                            <h2>Optimizing Revit Workflows with Dynamo</h2>
+                            <div class="blog-meta">
+                                <p><i class="far fa-user"></i>Kulandai Yesu L</p>
+                                <p><i class="far fa-list-alt"></i>Revit Automation</p>
+                                <p><i class="far fa-calendar-alt"></i>10-May-2025</p>
+                                <p><i class="far fa-comments"></i>8</p>
+                            </div>
+                            <p>
+                                A guide to using Dynamo for basic automation tasks in Revit, enhancing project efficiency.
+                            </p>
+                            <a class="btn" href="">Read More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
 
     <!-- Contact Start -->
     <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
